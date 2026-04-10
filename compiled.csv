@@ -1,0 +1,2691 @@
+"text","len","x0","y0","x1","y1","num_lines","is_article"
+"See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/320965050","119","0.065146571403206","0.89893793988232","0.54921083331014","0.90648901974951","1","0"
+"A machine learning approach for prediction of on-time performance of ﬂights","75","0.065146571403206","0.85801413490325","0.90860593255401","0.87479431238589","1","0"
+"Conference Paper · September 2017","33","0.065146571403206","0.82897820090221","0.22875628960907","0.83746251428344","1","0"
+"DOI: 10.1109/DASC.2017.8102138","30","0.065146571403206","0.81735907507163","0.16989375447473","0.82323213719056","1","0"
+"CITATIONS
+62","12","0.065146571403206","0.76121348611736","0.10402244862644","0.78263770880508","2","0"
+"5 authors, including:","21","0.065146571403206","0.72997515375461","0.15909802182787","0.73845946713584","1","0"
+"Lakshminarasimhan Srinivasan","28","0.10857761900534","0.70732191415304","0.25052377018954","0.71571200289436","1","0"
+"University of California, Santa Cruz","36","0.10857761900534","0.69389777216693","0.26556982796689","0.70228786090825","1","0"
+"2 PUBLICATIONS   74 CITATIONS","29","0.10857761900534","0.67879561243255","0.23446298257563","0.68718570117387","1","0"
+"SEE PROFILE","11","0.12052115709593","0.65930340430764","0.1672349811694","0.6660154753007","1","0"
+"READS
+602","9","0.49945704742458","0.76121348611736","0.5237767375782","0.78263770880508","2","0"
+"Aditya Vikram Sharma","20","0.54397387121677","0.70732191415304","0.64423851691849","0.71571200289436","1","0"
+"Arizona State University","24","0.54397387121677","0.69389777216693","0.65196300821332","0.70228786090825","1","0"
+"1 PUBLICATION   62 CITATIONS","28","0.54397387121677","0.67879561243255","0.66522771529748","0.68718570117387","1","0"
+"SEE PROFILE","11","0.55591740930736","0.65930340430764","0.60263123338083","0.6660154753007","1","0"
+"All content following this page was uploaded by Aditya Vikram Sharma on 12 July 2024.","85","0.070575452353474","0.037792832595542","0.46283331316824","0.046182921336864","1","0"
+"The user has requested enhancement of the downloaded file.","58","0.070575452353474","0.019139633344771","0.29187021224075","0.025851704337828","1","0"
+"A Machine Learning Approach for Prediction of
+On-time Performance of Flights","76","0.10962254901961","0.86783457449495","0.89037","0.93324593434343","2","0"
+"Balasubramanian Thiagarajanα, Lakshminarasimhan Srinivasanβ, Aditya Vikram Sharmaψ,
+Dinesh Sreekanthanγ, Vineeth Vijayaraghavanδ
+Undergraduate Studentαβψγ, Director − Research and Outreachδ
+Sri Venkateswara College of Engineeringα, SRM Universityβ,γ, College of Engineering Guindyψ,
+Solarillion Foundationδ
+(balasubramanian.in.1995α, lakshminarasimhan.srinivasanβ, adityasharmaψ, dinesh.sreekanthanγ, vineethvδ)
+@ieee.org","421","0.10515343137255","0.73004081691919","0.89484680882353","0.85027651515152","7","0"
+"Abstract—One of the major business problems that airlines
+face is the signiﬁcant costs that are associated with ﬂights being
+delayed due to natural occurrences and operational shortcomings,
+which is an expensive affair for the airlines, creating problems
+in scheduling and operations for the end-users thus causing
+bad reputation and customer dissatisfaction. In our paper, a
+two-stage predictive model was developed employing supervised
+machine learning algorithms for the prediction of ﬂight on-
+time performance. The ﬁrst stage of the model performs binary
+classiﬁcation to predict the occurrence of ﬂight delays and the
+second stage does regression to predict the value of the delay in
+minutes. The dataset used for evaluating the model was obtained
+from historical data which contains ﬂight schedules and weather
+data for 5 years. It was observed that,
+in the classiﬁcation
+stage, Gradient Boosting Classiﬁer performed the best and in
+the regression stage, Extra-Trees Regressor performed the best.
+The performance of the other algorithms is also extensively
+documented in the paper. Furthermore, a real-time Decision
+Support Tool was built using the model which utilizes features
+that are readily available before the departure of an airplane
+and can inform passengers and airlines about ﬂight delays in
+advance, helping them reduce possible monetary losses.","1364","0.080006341176471","0.41731030429293","0.49023014183007","0.69542045454545","23","1"
+"Keywords—Flight Delay Prediction, Classiﬁcation, Regression,","60","0.096285784313725","0.40450998080808","0.49024772222222","0.41845709191919","1","0"
+"Machine Learning, Deep Learning, Decision Support Tool","54","0.080006341176471","0.39193041111111","0.4530476124183","0.40325111818182","1","0"
+"I. INTRODUCTION","15","0.22159967320261","0.36267119191919","0.34865333660131","0.37525073737374","1","0"
+"In January 2017, air carriers in the United States of America","61","0.065427941176471","0.29102965151515","0.49025590686275","0.35869126767677","1","0"
+"reported an average on-time arrival rate of 76.0%, down
+from 81.0% in 2016 and 82.5% in the last quarter of
+2016, according to the U.S. Department of Transportation(cid:2)s
+Air Travel Consumer Report [1]. The carriers ﬁling on-time
+performance data reported that 24.01% of their ﬂights were
+delayed, of which 7.19% of their ﬂights were delayed by
+aviation system delays, 7.86% by late-arriving aircraft, 5.90%
+by factors under an airlines control, such as maintenance or
+crew problems, 0.72% by extreme weather and 0.04% for
+security reasons. Weather is considered a factor in both the
+extreme-weather category and the aviation-system category as
+well as a factor in delays attributed to late-arriving aircraft,
+although airlines do not report speciﬁc causes in that category.
+According to the Bureau of Transportation Statistics (BTS),
+around 20% of all scheduled commercial ﬂights are delayed
+and delays have ﬁve major causes, which are due to air car-","954","0.080004962745098","0.092484529040404","0.49024766944444","0.33148356098485","16","1"
+"rier, extreme weather, National Aviation System, late-arriving
+aircraft and security [2]. BTS uses the data collected from
+airlines to determine the percentage of late ﬂights delayed by
+weather, which includes those reported in the categories of
+extreme weather, late-arriving aircraft, and National Aviation
+System delays. In January 2017, 34.33% of late ﬂights were
+delayed by weather, up from 29.76% in January 2016. Flight
+delays cost airlines millions of dollars per year, while causing a
+great inconvenience to the passengers. Thus, predicting delays
+beforehand can prevent unnecessary expenditure as well as
+improve customer satisfaction.","645","0.5097683120915","0.53024516313131","0.92002576797386","0.69376667449495","11","1"
+"In our paper, a two-stage predictive model was built for
+predicting the departure and arrival delays of ﬂights. The
+dataset for training and validating our model consists of US
+Domestic Airline On-time Performance data and weather data
+from the year 2012 to 2016 which were extracted from BTS
+and World Weather Online API respectively. It contains on-
+time arrival performance data for non-stop domestic ﬂights
+served by major air carriers in 15 major interconnected air-
+ports. Following convention laid down by BTS, ﬂights that
+arrive at the gate within 15 minutes of the scheduled time are
+considered as being on-time and rest of the ﬂights including
+cancelled and diverted ﬂights are deemed as delayed. The
+model comprises two states, the training state and the predic-
+tion state. The training dataset after pre-processing contains
+information about approximately 3.2 million ﬂights and is
+used to train the predictive model. In the prediction state,
+the trained model labels each data point by performing a
+binary classiﬁcation to predict whether a scheduled ﬂight will
+be delayed or on time and then predicts the value of delay
+in minutes. The supervised learning algorithms implemented
+were Extra-Trees, Random Forests, AdaBoost, Gradient Boost-
+ing, Artiﬁcial Neural Networks and Deep Neural Networks. A
+Decision Support Tool (DST) was built using the model which
+can be used for predicting real-time ﬂight delays.","1423","0.5097683120915","0.1679819290404","0.92003065179739","0.52773051199495","24","1"
+"The rest of the paper is organized as follows: Section 2
+presents the related work in ﬂight delay prediction, Section
+3 discusses the problem statement, Section 4 enumerates the
+dataset and pre-processing used in building the model, Section
+5 describes the model, Section 6 discusses the results of the","302","0.5097683120915","0.092507172222222","0.92003553562092","0.16546727790404","5","1"
+"978-1-5386-0365-9/17/$31.00 ©2017 IEEE","38","0.082352614379085","0.034338383838384","0.33179052287582","0.044439393939394","1","0"
+"model, Section 7 describes the Decision Support Tool and
+Section 8 provides conclusions and directions for future work.","119","0.080006535947712","0.90760424310606","0.49023124183007","0.93527938989899","2","1"
+"II. RELATED WORK","16","0.21494279029412","0.88265868282828","0.35530098594771","0.89523778848485","1","0"
+"A good quantum of research attention has been devoted
+to the study of ﬂight delays; predicting and analyzing the
+delays and their causes have long been active subjects of
+research because of their vital importance in air trafﬁc control,
+airline decision making and ground delay program. Different
+researchers have studied this problem from various perspec-
+tives.","363","0.080007189542484","0.77206424146465","0.49023189542484","0.87521992020202","7","1"
+"A statistical method has been deployed by Mueller and
+Chatterji [3] to analyse the departure, arrival data and char-
+acterize the delay data. Tu et al. [4] have also used statistical
+methods to develop a model for estimating ﬂight departure
+delay distributions with long-term trend and short-term pattern.
+Statistical methods rely on estimates and approximations, thus
+their results might lead to fallacious conclusions.","420","0.080007189542484","0.66623803244949","0.49024817418301","0.76938867957071","7","1"
+"Xu et al. [5] in their paper have developed a stochastic
+Bayesian Network model and have demonstrated the method-
+ology on a case study analysis of two routes in the National
+Airspace System. Zonglei et al. [6] have built a classiﬁcation
+model using the ﬂight data in 2006 from a hub-airport in
+China. Khanmohammadi et al. [7] and Demir & Demir [8]
+have utilized artiﬁcial neural networks for predicting ﬂight
+delays in JFK airport and Esenboga International Airport
+respectively. The existing models have been developed for
+either one particular airport or a set of few airports, whereas
+the proposed model considers ﬁfteen major airports in the USA
+and thus can be generalized well.","684","0.080007189542484","0.48493254939394","0.49024817418301","0.66356247055556","12","1"
+"Rebollo and Balakrishnan [9] proposed a new class of mod-
+els, which considered both temporal and spatial delay states as
+explanatory variables, and used Random Forest algorithms to
+predict departure delays. Hugo Alonso and Antonio Loureiro
+[10] in their paper have developed a unimodal model for
+predicting ﬂight departure delay. Liu et al. [11] and Belcastro
+et al. [12] have developed a model for arrival delay prediction
+of a scheduled ﬂight. Choi et al. [13] have proposed a model
+to predict airline arrival delays caused by inclement weather
+conditions using data mining and supervised machine learning
+algorithms.","620","0.080007189542484","0.31872946224747","0.49023189542484","0.4822569875","11","1"
+"In the existing literature, researchers have worked exten-
+sively on the problem of classiﬁcation of ﬂight delays and
+comparatively little research exists on prediction of departure
+as well as arrival ﬂight delays using machine learning methods.
+In this paper, a two-stage predictive model is developed em-
+ploying supervised machine learning algorithms, where binary
+classiﬁcation is performed to predict the occurrence of a delay
+and then the value of the delay in minutes is predicted. The
+model is applied to predict both departure as well as arrival
+delays and it is used in building a DST.","595","0.080007189542484","0.16761870777778","0.49023189542484","0.31605390035353","10","1"
+"III. PROBLEM STATEMENT","22","0.19151017150327","0.14267321275252","0.37874359738562","0.15526676363636","1","0"
+"The delays in ﬂights create huge losses for the air carriers
+and also have a great impact on the daily lives of people.
+Hence, there is a need to predict the ﬂight delays in advance","181","0.080007189542484","0.092477833686869","0.49023189542484","0.13524908686869","3","1"
+"so that the air carriers and their passengers can be pre-informed
+about the delays and they can act accordingly. This paper
+details the implementation of machine learning techniques for
+prediction of ﬂight delays which is used in developing a DST
+that broadly addresses the above mentioned need.","295","0.50976803310458","0.86231888012626","0.91999273898693","0.9352773144697","5","1"
+"IV. DATA AND PRE-PROCESSING","27","0.60015746571895","0.83844134563131","0.82960838382353","0.85102181414141","1","0"
+"On-time performance data was sourced from a data reposi-
+tory provided by the Bureau of Transportation Statistics. This
+dataset contains 12 features describing the on-time arrival and
+departure performance of domestic ﬂights in the USA. Weather
+data for 5 years (2012-2016) was extracted from the World
+Weather Online API consisting of weather attributes for origin
+and destination airports. On-time performance and weather
+data were collected for 15 major airports throughout USA and
+the extracted features were combined to form the ﬁnal dataset.
+The feature set of the proposed model is described in Table I.
+Filtering of null values was performed as a precursor to feature
+selection. Feature selection is the process of selecting a set of
+relevant features for the model from a set of existing features.
+Various techniques such as Univariate and Tree-based feature
+selection were implemented, however the Recursive Feature
+Elimination algorithm produced the optimum results, with a
+better accuracy and lesser time taken, as shown in Table II.
+This algorithm eliminates the weakest feature from the feature
+set recursively until a sharp decrease in the predicting accuracy
+of the model is observed. As a result, a reduction in the total
+number of features in the feature set was considered. Principal
+Component Analysis was also performed on the feature set and
+tested with the model; however this did not yield favorable
+results. The reduced feature set is shown in Table I.","1477","0.50976862133987","0.47199611179293","0.92000960598039","0.83175792525253","24","1"
+"V. PREDICTIVE MODEL","19","0.63199116555556","0.44811954141414","0.79779075676471","0.46069887560606","1","0"
+"A. Flight Delay Prediction","26","0.50976797385621","0.42885565252525","0.69012033562092","0.44143469292929","1","0"
+"The model consists of two phases:
+1. Departure Delay Prediction
+2. Arrival Delay Prediction
+According to the standards set by the BTS, a ﬂight is said
+to have a class value of 0 if it departs or arrives no later than
+15 minutes from the scheduled time, otherwise it is said to
+have a class value of 1 and is considered as a delay. If the
+classiﬁcation stage outputs 0, then there is an absence of delay.
+If the classiﬁcation stage outputs 1, then the regression stage
+predicts the value of delay in minutes.","507","0.50976797385621","0.2737208630303","0.91999267973856","0.42225794583333","10","1"
+"1) Departure Delay Prediction: The feature set used in the
+departure delay prediction phase consists of 9 airline on-time
+performance data features and 12 weather features as shown in
+Table I. The dependency of each feature is equally distributed,
+hence every feature is important in predicting the outcome.","307","0.50976634598039","0.19819378863636","0.92000733062091","0.27115348088384","5","1"
+"2) Arrival Delay Prediction: The feature set used in the
+arrival delay prediction phase consists of 12 airline on-time
+performance data features and 24 weather features as shown
+in Table I. It was observed that the departure features also
+played a signiﬁcant role in the occurrence of arrival delays.
+As a result, this feature set is an extension of the features used
+for departure delay prediction.","399","0.50976471810458","0.092478275176768","0.9200057027451","0.1956264064899","7","1"
+"TABLE I
+FEATURES OF THE PREDICTIVE MODEL","40","0.3907575551634","0.91196184001263","0.60925786199346","0.93334726868687","2","0"
+"Airports Considered
+Flight On-time Performance data (Input)","59","0.12933006535948","0.87837605656566","0.34648924428105","0.90026393535354","2","0"
+"Weather data (Input)","20","0.12933006535948","0.85523098080808","0.23937474673203","0.86529423838384","1","0"
+"Selected Features","17","0.12933006535948","0.83208577878788","0.22213224281046","0.84214903636364","1","0"
+"Classiﬁcation (Output)","22","0.12933006535948","0.79170699090909","0.2496499246732","0.80177024848485","1","0"
+"Regression (Output)","19","0.12933006535948","0.7744734050505","0.23641851683007","0.78453666262626","1","0"
+"ATL, LAX, ORD, DFW, DEN, JFK, SFO, CLT, LAS, PHX, MIA, IAH, SEA, MCO, EWR
+Airline ID, Flight Number, Origin Airport ID, Destination Airport ID, Year, Quarter of Year,
+Month, Day of Month, Scheduled Departure Time, Scheduled Arrival Time
+Time of Observation, Temperature, Wind Speed, Wind Direction, Weather Code, Precipitation,
+Humidity, Visibility, Pressure, Cloud Cover, Dew Point, Wind Chill, Wind Gust
+Airline ID, Flight Number, Origin Airport ID, Destination Airport ID, Year, Quarter of Year,
+Month, Day of Month, Day of Week, Scheduled Departure Time, Scheduled Arrival Time,
+Wind Direction, Humidity, Pressure, Temperature
+1 - indicates occurrence of delay
+0 - indicates absence of delay
+Numerical value of the ﬂight delay","730","0.36667320261438","0.7744734050505","0.87066482026144","0.90026393535354","11","1"
+"TABLE II
+FEATURE SELECTION RESULTS","34","0.19915555418301","0.72075981981061","0.37108888284314","0.74214524848485","2","0"
+"Without Feature Selection
+With Feature Selection","48","0.13169607843137","0.67534966767677","0.27050865343137","0.69723742020202","2","0"
+"Accuracy
+91.63
+91.85","20","0.29069281045752","0.67534966767677","0.34038872810458","0.70906191515152","3","0"
+"Time taken (s)
+66
+37","20","0.36057516339869","0.67534966767677","0.43854409918301","0.70906191515152","3","0"
+"ensemble of oversampling and undersampling techniques was
+performed. The results of sampling for arrival delay prediction
+using Random Forest Classiﬁer is shown in Table III and it
+was observed that SMOTE + Tomek Links had the highest
+accuracy.","244","0.5097673795098","0.67111876555556","0.91999208539216","0.74407719989899","5","1"
+"B. Classiﬁcation","16","0.080006535947712","0.62954252121212","0.1917113745098","0.64212156161616","1","0"
+"Binary classiﬁcation was performed for predicting whether
+a scheduled ﬂight is on-time or delayed. The dataset was
+observed to be skewed; the number of on-time ﬂights were
+much higher than the number of delayed ﬂights, constituting
+of around 75% of the data. Taking into consideration the
+imbalanced nature of the dataset, sampling of the dataset
+was performed before classiﬁcation. Sampling is a statistical
+technique performed to represent the desired distribution of a
+class using a set of samples from the population. Sampling
+methods handle the class-imbalance by changing the minority
+and majority class sizes in the training set. We initially
+performed a logic-based sampling wherein ten airports out of
+the ﬁfteen airports were considered for training the model, the
+selection of which was determined by maximising the ratio
+of the minority class labels. By performing this logic-based
+sampling, the class imbalance decreased and the accuracy of
+the model improved considerably, but it was seen that class
+imbalance still existed in the dataset. In view of this, a second
+level of sampling was performed.","1112","0.080006535947712","0.33505963792929","0.49024752058824","0.61934720896465","19","1"
+"Sampling can be classiﬁed into oversampling and undersam-
+pling. Oversampling creates synthetic samples for the minority
+class from the existing dataset to balance the distribution of
+classes, whereas undersampling technique considers only a
+subset of the majority class to balance the class distribution.
+Both undersampling and oversampling were performed on
+the dataset, and it was observed that oversampling tech-
+niques performed better. Undersampling considers only a
+sample from the majority class thus neglecting potentially
+important information in the ignored examples albeit the fact
+that it signiﬁcantly reduces the run time. Synthetic Minority
+Over-sampling Technique (SMOTE) produced the best results
+among the implemented oversampling techniques. Although
+over-sampling minority class examples can balance class
+distributions,
+in data sets
+the other issues usually present
+with skewed class distributions are not solved. Therefore, an","948","0.080006535947712","0.092480391161616","0.49024752058824","0.33148215883838","18","1"
+"TABLE III
+SAMPLING RESULTS","26","0.65843244354575","0.6308946645202","0.77133398088235","0.65227908686869","2","0"
+"Method
+Without Sampling
+Random Undersampler
+SMOTE
+SMOTE + Tomek","63","0.54726797385621","0.56183577878788","0.66973663464052","0.61919701616162","5","0"
+"Accuracy
+91.86
+86.17
+93.79
+94.00","32","0.68992156862745","0.56183577878788","0.73961748627451","0.61919701616162","5","0"
+"Recall (Minority class)
+0.69
+0.80
+0.91
+0.91","43","0.75980392156863","0.56183577878788","0.88249397401961","0.61919701616162","5","0"
+"The following algorithms showed the highest accuracy from","57","0.52604575163399","0.53331398585859","0.9199916993464","0.54589302626263","1","0"
+"those implemented.","18","0.50976862133987","0.51821913737374","0.63890800990196","0.53079817777778","1","0"
+"1) Gradient Boosting Classiﬁer
+2) Random Forest Classiﬁer
+3) Extra-Trees Classiﬁer
+4) AdaBoost Classiﬁer","104","0.52062655303922","0.45602710371212","0.73098066611111","0.51389068957071","4","0"
+"C. Regression","13","0.50976862133987","0.43375088106061","0.60392495859477","0.44632992146465","1","0"
+"In order to enhance the one-dimensional nature of binary
+classiﬁcation, we attempted to extend the problem statement
+by not only predicting the occurrence of ﬂight delays, but
+also its numerical value. It was observed that the following
+algorithms encompassed the lowest mean square errors from
+those implemented.","313","0.50976862133987","0.33943575191919","0.91999332722222","0.42749029265152","6","1"
+"1) Extra-Trees Regressor
+2) Random Forest Regressor
+3) Gradient Boosting Regressor
+4) Multilayer Perceptron (MLP)","113","0.52062655303922","0.27724371825758","0.73728054552288","0.33510730411616","4","0"
+"To improve our base results, we applied the following meth-
+ods:
+(A) Feature Scaling: Feature scaling is a technique used in
+optimization problems involving datasets with varying
+scales of features. The need for feature scaling is demon-
+strated by the fact
+the range of features do not
+share the same scales, which heavily impact algorithms
+such as Random Forests as shown in Table IV. Various
+scaling algorithms were tested to optimise the model,
+namely RobustScaler and StandardScaler. RobustScaler
+scales features which are robust to outliers whereas Stan-
+dardScaler removes the mean and scales to unit variance.","617","0.50976862133987","0.092473967474747","0.91999332722222","0.27291527045455","13","1"
+"that","4","0.68263275434641","0.18304809","0.70705089160131","0.19562713040404","1","0"
+"are","3","0.43587686993464","0.92270034949495","0.45575323366013","0.93527938989899","1","0"
+"(B) Hyper-Parameter Tuning: Hyper-parameters","44","0.082725490196078","0.92270034949495","0.42129110261438","0.93527938989899","1","0"
+"the
+higher level properties of a model which cannot be
+implicitly learnt by a machine learning model and must
+be predeﬁned. Grid Search algorithm was used to exhaus-
+tively search the hyper-parameter space for the optimum
+parameter values for the estimators. The ﬁnal values of
+the hyper parameters were validated by using the metrics
+ﬁt and score provided by the Grid Search algorithm.
+(C) Selective Training: The initial model was established by
+training the model on the entirety of origin-destination
+airport pairs. We further attempted to optimize the model
+by performing selective training on the dataset with ref-
+erence to origin-destination airport pairs. The model was
+trained on single origin airport with multiple destination
+airports whereby an increase in efﬁciency was observed.
+Furthermore, the most efﬁcient model was ﬁnally ob-
+tained by training single airport-destination pairs individ-
+ually. The results of selective training are described in
+Section VI.","976","0.082725490196078","0.65098427143939","0.49025280584967","0.93527938989899","19","1"
+"TABLE V
+DEPARTURE DELAY CLASSIFICATION PERFORMANCE","50","0.56746674526144","0.91196196627525","0.86230989251634","0.93334739494949","2","0"
+"Algorithm","9","0.5668545751634","0.89020067777778","0.62112157957516","0.90026393535354","1","0"
+"Accuracy","8","0.66275490196078","0.89020067777778","0.71245081960784","0.90026393535354","1","0"
+"Random Forest
+Gradient Boosting
+AdaBoost
+Extra-Trees
+LOYOCV
+K-Fold CV","69","0.54540522875817","0.80743047575758","0.64257012434641","0.87711873333333","6","0"
+"86.00%
+86.48%
+78.35%
+85.88%
+82.91%
+82.45%","41","0.66752777777778","0.80743047575758","0.70767780767974","0.87711873333333","6","0"
+"Precision
+1
+0
+0.91
+0.82
+0.95
+0.81
+0.80
+0.77
+0.88
+0.84
+0.90
+0.78
+0.91
+0.80","73","0.73263725490196","0.80743047575758","0.79840306372549","0.90026393535354","15","0"
+"Recall","6","0.83483496732026","0.89020067777778","0.86810883251634","0.90026393535354","1","0"
+"0
+0.92
+0.96
+0.82
+0.89
+0.92
+0.90","31","0.81858823529412","0.80743047575758","0.84137855392157","0.88894322828283","7","0"
+"1
+0.79
+0.76
+0.74
+0.82
+0.74
+0.75","31","0.86156535947712","0.80743047575758","0.88435567810458","0.88894322828283","7","0"
+"TABLE VI
+ARRIVAL DELAY CLASSIFICATION PERFORMANCE","49","0.57554887877451","0.76413481981061","0.85422819316993","0.78552024848485","2","0"
+"Algorithm","9","0.5668545751634","0.74237365757576","0.62112157957516","0.75243691515152","1","0"
+"Accuracy","8","0.66275490196078","0.74237365757576","0.71245081960784","0.75243691515152","1","0"
+"Random Forest
+Gradient Boosting
+AdaBoost
+Extra-Trees
+LOYOCV
+K-Fold CV","69","0.54540522875817","0.65960345555556","0.64257012434641","0.72929171313131","6","0"
+"94.09%
+94.35%
+92.15%
+93.73%
+94.31%
+93.13%","41","0.66752777777778","0.65960345555556","0.70767780767974","0.72929171313131","6","0"
+"Precision
+1
+0
+0.97
+0.92
+0.97
+0.92
+0.95
+0.90
+0.95
+0.93
+0.98
+0.91
+0.95
+0.92","73","0.73263725490196","0.65960345555556","0.79840306372549","0.75243691515152","15","0"
+"Recall","6","0.83483496732026","0.74237365757576","0.86810883251634","0.75243691515152","1","0"
+"0
+0.97
+0.97
+0.95
+0.95
+0.98
+0.94","31","0.81858823529412","0.65960345555556","0.84137855392157","0.74111494545455","7","0"
+"1
+0.91
+0.92
+0.89
+0.93
+0.91
+0.92","31","0.86156535947712","0.65960345555556","0.88435567810458","0.74111494545455","7","0"
+"TABLE IV
+FEATURE SCALING RESULTS","32","0.20558142312092","0.60848809886364","0.3646624122549","0.62987252121212","2","0"
+"Regressor
+Random Forest Regressor
+Random Forest Regressor with Standard Scalar
+Random Forest Regressor with Robust Scalar","121","0.093982026143791","0.55125370808081","0.34714990849673","0.59679045050505","4","0"
+"Mean Squared Error
+102.18
+90.34
+76.31","37","0.36733333333333","0.55125370808081","0.47625803333333","0.59679045050505","4","0"
+"D. Deep Learning","16","0.080006535947712","0.50744024848485","0.20370881928105","0.52001928888889","1","0"
+"Deep learning is a paradigm which consists of state of the
+art learning algorithms in various applications like computer
+vision, speech recognition, natural language processing, audio
+recognition and bioinformatics. The application of deep learn-
+ing in the problem of ﬂight delay prediction is relatively new
+[14] and hence deep learning was implemented.","355","0.080006535947712","0.4118445730303","0.49023124183007","0.49989911376263","6","1"
+"The deep learning architecture implemented in our paper
+is Deep Neural Network (DNN), which is an Artiﬁcial Neural
+Network (ANN) with multiple hidden layers between the input
+and output layers. DNNs are typically feed forward networks
+in which data ﬂows from the input layer to the output layer
+without looping back. Similar to shallow ANNs, DNNs can
+model complex non-linear relationships and can generate com-
+positional models where the object is expressed as a layered
+composition of primitives. The extra layers enable composition
+of features from lower layers, potentially modelling complex
+data with fewer units than a similarly performing shallow
+network.","663","0.080006535947712","0.23040197843434","0.49023124183007","0.40902435217172","12","1"
+"The DNN was used in both the classiﬁcation and the regres-
+sion process. The results achieved using the DNN Classiﬁer
+and DNN Regressor are discussed in Section VI.","164","0.080006535947712","0.18481302020202","0.49023124183007","0.22758175757576","3","0"
+"VI. OBSERVATIONS AND RESULTS","28","0.16527629911765","0.15864358454545","0.40497042205882","0.17122383434343","1","0"
+"A. Departure Delay Prediction","29","0.50976797385621","0.61647938989899","0.71753376437909","0.62905843030303","1","0"
+"The dataset was split into training data and test data in the
+ratio 3:1 for the purpose of evaluating the model. The results
+of the classiﬁcation stage in the model are illustrated in Table
+V. The Gradient Boosting Classiﬁer performed better than the
+other classiﬁers with an accuracy of 86.48%. The Receiver
+Operating Characteristic (ROC) curve of the model comparing
+the various classiﬁers is shown in Figure 1. To additionally
+evaluate the model, K-Fold Cross Validation (K=5) and Leave-
+One-Year-Out Cross Validation (LOYOCV) were performed,
+the results of which are shown in Table V.","588","0.50976797385621","0.46137353219697","0.92000895849673","0.60980620896465","10","1"
+"The results of the regression stage in the model are shown
+in Table VII. Extra-Trees Regressor performs better than the
+other regressors with an MSE value of 880.67. As discussed
+in Section V, a selective training process was performed in the
+regression stage. The results of Selective Training process are
+shown in Table VII. It was observed that the selective training
+process greatly reduced the error and the best MSE observed
+was 70.16 for the Extra-Trees Regressor.","471","0.50976797385621","0.3405593965404","0.91999267973856","0.45880237633838","8","1"
+"TABLE VII
+DEPARTURE DELAY REGRESSION RESULTS","44","0.59551974478758","0.29902218977273","0.83424737957516","0.32040661212121","2","0"
+"Regressor
+MLP
+Gradient Boosting
+Random Forests
+Extra-Trees
+MLP - Selective Training
+Random Forests - Selective Training
+Gradient Boosting -Selective Training
+Extra-Trees - Selective Training","190","0.54775490196078","0.1806651979798","0.74998967794118","0.28683337979798","9","0"
+"MSE
+1261.75
+1218.75
+1105.56
+880.67
+840.19
+101.39
+172.25
+70.16","61","0.77017320261438","0.1806651979798","0.81249808006536","0.28683337979798","9","0"
+"R2 score
+0.012
+0.055
+0.223
+0.314
+0.200
+0.919
+0.863
+0.944","56","0.83268464052288","0.1806651979798","0.88200639052288","0.29020404040404","9","0"
+"To analyze the performance of the proposed model, accu-
+racy, precision and recall were used for evaluating classiﬁca-
+tion results and mean squared error (MSE) and R2 score were
+used for evaluating regression results.","218","0.080006412810458","0.092479238383838","0.49024817418301","0.15034378383838","4","1"
+"B. Arrival Delay Prediction","27","0.50976797385621","0.14192257171717","0.69734810424837","0.15450161212121","1","0"
+"Similar to the departure delay prediction phase, the dataset
+was split into training data and test data in the ratio of 3:1.
+The results of the classiﬁcation stage in the model are shown","186","0.50976797385621","0.092480653409091","0.92000895849673","0.13524939078283","3","1"
+"in Table VI. As seen from the table, the Gradient Boosting
+Classiﬁer performs the best with 94.35% accuracy, followed
+by Random Forest Classiﬁer with 94.09% accuracy. The ROC
+curve of the model comparing the various classiﬁers is shown
+in Figure 2. To additionally evaluate the model, K-Fold Cross
+Validation (K=5) and LOYOCV were performed, the results
+of which are documented in Table VI.","390","0.080006535947712","0.83212371116162","0.49023124183007","0.93527938989899","7","1"
+"The results of the regression stage in the model are shown
+in Table VIII. Extra-Trees Regressor performs the best with an
+MSE value of 68.31, signifying that this regressor can predict
+the delay value in minutes with an error of approximately
+8 minutes. As discussed in Section V, a selective training
+process was performed in the regression stage, the results
+of which are shown in Table VIII. By considering a single
+airport-destination pair (ATL-CLT), the number of datapoints
+were signiﬁcantly reduced to 20,000. It was observed that the
+selective training process greatly minimized the error, resulting
+in an MSE value of 26.36 for the Extra-Trees Regressor.","663","0.080006535947712","0.66631309007576","0.49024752058824","0.8298443890404","11","1"
+"TABLE VIII
+ARRIVAL DELAY REGRESSION RESULTS","43","0.60359927369281","0.91196184001263","0.82616731421569","0.93334726868687","2","0"
+"egressor","8","0.56067329526144","0.88970951616162","0.60387071633987","0.89977277373737","1","0"
+"R
+¯
+Gradient Boosting
+MLP
+Random Forests
+Extra-Trees
+MLP - Selective Training
+Gradient Boosting - Selective Training
+Random Forests - Selective Training
+Extra-Trees - Selective Training","185","0.55198692810458","0.79360598080808","0.75877976781046","0.89977277373737","10","0"
+"MSE
+89.26
+87.83
+75.99
+68.31
+70.41
+69.42
+45.99
+26.36","51","0.77896405228758","0.79360598080808","0.80826589052288","0.89977277373737","9","0"
+"R2 score
+0.929
+0.931
+0.930
+0.943
+0.933
+0.938
+0.952
+0.985","56","0.82845261437908","0.79360598080808","0.87777436437908","0.90314343434343","9","0"
+"TABLE IX
+DEEP LEARNING RESULTS","30","0.64148973553922","0.74850623333333","0.78827679133987","0.7698901979798","2","0"
+"rediction","9","0.56473133756536","0.72674486969697","0.61102824197712","0.73680812727273","1","0"
+"P
+¯
+Departure Delay Prediction
+Arival Delay Prediction","54","0.55749183006536","0.70208956666667","0.7033108001634","0.73680812727273","4","0"
+"Classiﬁcation
+78.31%
+81.61%","27","0.72349509803922","0.70208956666667","0.79440554656863","0.73680812727273","3","0"
+"Regression
+892 MSE
+110 MSE","26","0.81458986928105","0.70208956666667","0.87226890996732","0.73680812727273","3","0"
+"DNN performs poorly due to the fact that the training data for
+the network is small in size.","92","0.50976797385621","0.64206510169192","0.92000895849673","0.66974024848485","2","1"
+"Fig. 1. ROC curve for Departure Delay Prediction","48","0.14825490196078","0.42682946565657","0.42198616323529","0.43689272323232","1","0"
+"Fig. 3. Flowchart Diagram of the DST","36","0.60902287581699","0.30578401111111","0.82073842434641","0.31584726868687","1","0"
+"VII. DECISION SUPPORT TOOL","26","0.60565849673203","0.25178620808081","0.82410927745098","0.26436524848485","1","0"
+"One of the strengths of this predictive model is that it
+can easily be incorporated in applications for commercial
+or personal use. In order to showcase this, we developed a
+decision support tool (DST) which can serve the dual purpose
+of aiding users in arriving on time for their ﬂights or helping
+airlines accurately predict when their ﬂights would arrive at
+the gate in order to minimise costs and optimise fuel. This
+application was built using PyQt4 and thus can be easily ported
+to all platforms supported by Qt including Windows, OS X,
+Linux, iOS and Android.","566","0.50976862133987","0.092475393636364","0.92001286173203","0.2409131020202","10","1"
+"Fig. 2. ROC curve for Arrival Delay Prediction","46","0.15580718954248","0.16794562727273","0.4144317253268","0.17800888484848","1","0"
+"C. Deep Learning","16","0.080006535947712","0.12639479393939","0.2028134875817","0.13897383434343","1","0"
+"The classiﬁcation and regression results of the deep learning
+algorithm are shown in Table IX. It can be inferred that the","122","0.080006535947712","0.09247918520202","0.49023124183007","0.12015433199495","2","1"
+"TABLE X
+BEST RESULTS OF PREDICTION","34","0.41399616772876","0.91196184001263","0.58601596509804","0.93334726868687","2","0"
+"Prediction
+Departure Delay Prediction
+Arrival Delay Prediction","62","0.25518790849673","0.86655168787879","0.40100687859477","0.90026393535354","3","0"
+"Classiﬁer
+Gradient Boosting
+Gradient Boosting","45","0.43258660130719","0.86655168787879","0.52975149689542","0.90026393535354","3","0"
+"Accuracy
+86.48%
+94.35%","22","0.5499362745098","0.86655168787879","0.6027316754902","0.90026393535354","3","0"
+"Regressor MSE
+70.16
+Extra-Trees
+26.36
+Extra-Trees","49","0.63431209150327","0.86655168787879","0.74481164215686","0.90026393535354","5","0"
+"The interface allows the user to input their ﬂight details and
+select whether they wish to view the arrival delay or departure
+delay. Upon selecting their desired option, the user enters the
+ﬂight details in the input text ﬁelds. Then the tool extracts
+the necessary real-time weather forecast details, collates the
+departure features and performs preprocessing as discussed in
+Section IV. By accessing the stored trained model, the tool
+predicts the value of departure delay and displays the value to
+the user. Then if the user wishes to view the arrival delay, the
+tool collates the arrival delay features, predicts the value of
+arrival delay and displays the value to the user. The ﬂowchart
+of the DST(cid:2)s operation is shown in Figure 3. The interface
+of the DST for a sample test case is shown in Figure 4. To
+visually aid users, a graph is also plotted of the airline(cid:2)s past
+history of delays. It is also possible to routinely update the
+model with daily ﬂight data and retrain the model, ensuring
+that the application is up-to date.","1048","0.080005939346405","0.58809635959596","0.49023892581699","0.84219353131313","17","1"
+"Fig. 4.","7","0.20749509803922","0.37719057676768","0.24244893529412","0.38725383434343","1","0"
+"Interface of the DST","20","0.2515650627451","0.37719057676768","0.36274274852941","0.38725383434343","1","0"
+"VIII. CONCLUSION AND FUTURE WORK","32","0.14328431372549","0.33064971818182","0.42697087173203","0.34322875858586","1","0"
+"In this paper, the authors have implemented a machine learn-
+ing approach for the prediction of ﬂight on-time performance.
+A two-stage predictive model was developed to efﬁciently
+predict the departure and arrival delays of ﬂights using ﬂight
+schedule and weather features. Various supervised machine
+learning algorithms were implemented and the best results
+are shown in Table X. Additionally, a deep learning approach
+was explored by implementing a DNN to predict the ﬂight
+delays. It was found that the departure delay prediction had
+comparatively higher error rates due to a weak feature set.
+Furthermore, a Decision Support Tool was developed using
+the model to predict real-time ﬂight delays.","698","0.080007183431373","0.14404970237374","0.4902481680719","0.32267459191919","12","1"
+"In the future, more data can be extracted by considering
+a larger number of airports over a longer time frame to
+improve the model and other deep architectures can also be","171","0.080007183431373","0.098514834015152","0.4902481680719","0.14128482929293","3","1"
+"View publication stats","22","0.081699346405229","0.0052676767676768","0.14454248366013","0.010318181818182","1","0"
+"implemented. The authors are planning to improve the model
+using the above mentioned methods and develop an improved
+DST for an accurate prediction of real-time ﬂight delays in
+the future. Another promising approach is to generalize the
+existing model for use in various domains in transportation.","297","0.50976802699346","0.76923052626263","0.91999273287582","0.84219147641414","5","1"
+"ACKNOWLEDGEMENT","15","0.63950972960784","0.74564482550505","0.79027314977124","0.75822386590909","1","0"
+"The authors would like to acknowledge Solarillion Founda-
+tion for its support of the research work carried out, and Mr.
+Mukundhan Srinivasan, Solutions Architect - Deep Learning,
+NVIDIA for his guidance and support.","216","0.50976862133987","0.68130596027778","0.91999332722222","0.7391708040404","4","1"
+"REFERENCES","10","0.66930207928105","0.65772151742424","0.76048569045752","0.67030055782828","1","0"
+"[1] ”Air Travel Consumer Report”, U.S. Department of Transportation,","68","0.51627896138889","0.6396250507197","0.91999317707516","0.64968830829545","1","0"
+"March 2017, [Online]
+Available: https://www.transportation.gov/sites/dot.gov/ﬁles/docs/resour
+ces/individuals/aviation-consumer-protection/275906/2017marchatcr.pdf
+[2] ”Reporting the Causes of Airline Delays and Cancellations”, Bureau of","237","0.51627896138889","0.59433938530303","0.91999317707516","0.63836714352273","4","0"
+"Transportation Statistics (BTS), December 2001, [Online]
+Available: https://www.bts.gov/archive/publications/federal register/
+2001/bts 20011227","144","0.53960192232026","0.56037698775253","0.89920501013072","0.5930804717803","3","0"
+"[3] E. Mueller and G. Chatterji, ”Analysis of Aircraft Arrival and Departure
+Delay Characteristics,” AIAAs Aircraft Technology, Integration, and
+Operations (ATIO) 2002 Technical Forum, 2002.","190","0.51627990753268","0.52641193848485","0.91999412321895","0.55911853193182","3","0"
+"[4] Y. Tu, M. O. Ball, and W. S. Jank, ”Estimating Flight Departure Delay
+Distributions - A Statistical Approach With Long-Term Trend and Short-
+Term Pattern,” Journal of the American Statistical Association, vol. 103,
+no. 481, pp. 112-125, 2008.","246","0.51627990753268","0.48112727939394","0.91999412321895","0.52515403128788","4","0"
+"[5] N. Xu, G. Donohue, K. B. Laskey, and C. H. Chen , ”Estimation of delay
+propagation in the national aviation system using Bayesian networks,”
+6th USA/Europe Air Trafﬁc Management Research and Development
+Seminar, 2005.","221","0.51627990753268","0.43584060765152","0.91999412321895","0.47986937219697","4","0"
+"[6] L. Zonglei, W. Jiandong and Z. Guansheng, ”A New Method to
+Alarm Large Scale of Flights Delay Based on Machine Learning,”
+2008 International Symposium on Knowledge Acquisition and Modeling,
+Wuhan, 2008, pp. 589-592.","219","0.51627990753268","0.39055494223485","0.91999412321895","0.43458270045455","4","0"
+"[7] S. Khanmohammadi, S. Tutun, and Y. Kucuk, ”A New Multilevel Input
+Layer Artiﬁcial Neural Network for Predicting Flight Delays at JFK
+Airport,” Procedia Computer Science, vol. 95, pp. 237-244, 2016.
+[8] E. Demir and V. B. Demir, ”Predicting ﬂight delays with artiﬁcial neural
+networks: Case study of an airport,” 2017 25th Signal Processing and
+Communications Applications Conference (SIU), Antalya, 2017, pp.1-4.
+[9] J. J. Rebollo and H. Balakrishnan, ”Characterization and prediction of air
+trafﬁc delays,” Transportation Research Part C: Emerging Technologies,
+vol. 44, pp. 231-241, 2014.","594","0.51627730292484","0.28866144030303","0.92000454165033","0.38929703503788","9","0"
+"[10] H. Alonso and A. Loureiro, ”Predicting ﬂight departure delay at Porto
+Airport: A preliminary study,” 2015 7th International Joint Conference
+on Computational Intelligence (IJCCI), Lisbon, 2015, pp. 93-98.
+[11] Y. J. Liu, W. D. Cao and S. Ma, ”Estimation of Arrival Flight Delay and
+Delay Propagation in a Busy Hub-Airport,” 2008 Fourth International
+Conference on Natural Computation, Jinan, 2008, pp. 500-505.
+[12] L. Belcastro, F. Marozzo, D. Talia, and P. Trunﬁo, ”Using Scalable Data
+Mining for Predicting Flight Delays,” ACM Transactions on Intelligent
+Systems and Technology, vol. 8, no. 1, pp. 1-20, 2016.","617","0.50976448101307","0.18676894469697","0.9200032393464","0.2874025267803","9","0"
+"[13] S. Choi, Y. J. Kim, S. Briceno and D. Mavris, ”Prediction of weather-
+induced airline delays based on machine learning algorithms,” 2016
+IEEE/AIAA 35th Digital Avionics Systems Conference (DASC), Sacra-
+mento, CA, 2016, pp. 1-6.","233","0.50976317870915","0.1414832792803","0.91999282091503","0.1855110375","4","0"
+"[14] Y. J. Kim, S. Choi, S. Briceno and D. Mavris, ”A deep learning
+approach to ﬂight delay prediction,” 2016 IEEE/AIAA 35th Digital
+Avionics Systems Conference (DASC), Sacramento, CA, 2016, pp. 1-6.","199","0.50976317870915","0.10751877863636","0.91998761169935","0.14022436575758","3","0"
+"Text-To-KG Alignment:
+Comparing Current Methods on Classification Tasks","71","0.22851584811079","0.87089838838803","0.7714906799535","0.9068724467567","2","1"
+"Sondre Wold, Lilja Øvrelid, Erik Velldal
+University of Oslo, Language Technology Group
+{sondrewo, liljao, erikve}@ifi.uio.no","124","0.30560277921502","0.79564764422906","0.69941928920366","0.84248602929124","3","0"
+"3
+2
+0
+2","7","0.027449452018895","0.63122260627873","0.06104731250714","0.67873475157087","4","0"
+"n
+u
+J","5","0.027449452018895","0.59228640321182","0.06104731250714","0.62528358811721","3","0"
+"5","1","0.027449452018895","0.57446934872727","0.06104731250714","0.5863473850503","1","0"
+"]
+L
+C
+.
+s
+c
+[","13","0.027449452018895","0.49068168050458","0.06104731250714","0.56259131240423","7","0"
+"1
+v
+1
+7
+8
+2
+0
+.
+6
+0
+3
+2
+:
+v
+i
+X
+r
+a","35","0.027449452018895","0.28150946085593","0.06104731250714","0.47880364418154","18","0"
+"Abstract","8","0.26501656374522","0.73148910570265","0.33974710756019","0.74568953568756","1","0"
+"In contrast to large text corpora, knowledge
+graphs (KG) provide dense and structured rep-
+resentations of factual information. This makes
+them attractive for systems that supplement
+or ground the knowledge found in pre-trained
+language models with an external knowledge
+source. This has especially been the case for
+classification tasks, where recent work has fo-
+cused on creating pipeline models that retrieve
+information from KGs like ConceptNet as addi-
+tional context. Many of these models consist of
+multiple components, and although they differ
+in the number and nature of these parts, they all
+have in common that for some given text query,
+they attempt to identify and retrieve a relevant
+subgraph from the KG. Due to the noise and
+idiosyncrasies often found in KGs, it is not
+known how current methods compare to a sce-
+nario where the aligned subgraph is completely
+relevant to the query. In this work, we try to
+bridge this knowledge gap by reviewing current
+approaches to text-to-KG alignment and eval-
+uating them on two datasets where manually
+created graphs are available, providing insights
+into the effectiveness of current methods. We
+release our code for reproducibility.1","1193","0.1476189196272","0.34615576666785","0.45992755799831","0.71299894095428","26","1"
+"1","1","0.119047299068","0.31264103766525","0.12908902761072","0.32684146765017","1","0"
+"Introduction","12","0.14917248469617","0.31264103766525","0.25816540629893","0.32684146765017","1","0"
+"There is a growing interest in systems that com-
+bine the implicit knowledge found in large pre-
+trained language models (PLMs) with external
+knowledge. The majority of these systems use
+knowledge graphs (KG) like ConceptNet (Speer
+et al., 2017) or Freebase (Bollacker et al., 2008)
+and either inject information from the graph di-
+rectly into the PLM (Peters et al., 2019; Chang
+et al., 2020; Wang et al., 2020; Lauscher et al.,
+2020; Kaur et al., 2022) or perform some type of
+joint reasoning between the PLM and the graph,
+for example by using a graph neural network on","572","0.11847949522574","0.10834863747045","0.48876206858331","0.29833913504139","12","1"
+"1https://github.com/SondreWold/graph_impact","43","0.14030298550588","0.082321736093789","0.46247522157789","0.094265804796351","1","0"
+"the graph and later intertwining the produced repre-
+sentations (Sun et al., 2022; Yasunaga et al., 2021;
+Zhang et al., 2022; Yasunaga et al., 2022). Beyond
+their competitive performance, these knowledge-
+enhanced systems are often upheld as more inter-
+pretable, as their reliance on structured information
+can be reverse-engineered in order to explain pre-
+dictions or used to create reasoning paths.","402","0.5142858102796","0.61900204824858","0.8840021064985","0.74461596455594","8","1"
+"One of the central components in these systems
+is the identification of the most relevant part of a
+KG for each natural language query. Given that
+most KGs are noisy and contain idiosyncratic phras-
+ings, which leads to graph sparsity (Sun et al., 2022;
+Jung et al., 2022), it is non-trivial to align entities
+from text with nodes in the graph. Despite this,
+existing work often uses relatively simple methods
+and does not isolate and evaluate the effect of this
+component on the overall classification pipeline.
+Furthermore, due to the lack of datasets that con-
+tain manually selected relevant graphs, it is not
+known how well current methods perform relative
+to a potential upper bound where the graph pro-
+vides a structured explanation as to why the sample
+under classification belongs to a class. Given that
+this problem applies to a range of typical NLP
+tasks, and subsequently can be found under a range
+of different names, such as grounding, etc., there
+is much to be gained from reviewing current ap-
+proaches and assessing their effect in isolation.","1060","0.51382719948394","0.27776744515317","0.8841571454821","0.61260109325446","21","1"
+"In this paper, we address these issues by provid-
+ing an overview of text-to-KG alignment methods.
+We also evaluate a sample of the current main ap-
+proaches to text-to-KG alignment on two down-
+stream NLP tasks, comparing them to manually
+created graphs that we use for estimating a po-
+tential upper bound. For evaluation, we use the
+tasks of binary stance prediction (Saha et al., 2021),
+transformed from a graph generation problem in
+order to get gold reference alignments, and a sub-
+set of the Choice of Plausible Alternatives (COPA)
+(Roemmele et al., 2011) that contain additional ex-","591","0.51342402515808","0.081375992588105","0.88416682167398","0.27136530235541","12","1"
+"Figure 1: An example of a multi-relational knowledge graph.","59","0.29554357978484","0.73857757949376","0.70445676593715","0.75041119196095","1","1"
+"planation graphs (Brassard et al., 2022). As the
+focus of this work is not how to best combine struc-
+tured data with PLMs, but rather to report on how
+current text-to-KG alignment methods compare to
+manually created graphs, we use a rather simple
+integration technique to combine the graphs with
+a pre-trained language model. Through this work,
+we hope to motivate more research into methods
+that align unstructured and structured data sources
+for a range of tasks within NLP, not only for QA.","494","0.1183871011094","0.55254562282483","0.48876359528689","0.71034782976398","10","1"
+"2 Background","12","0.119047299068","0.51628640701279","0.25483155242274","0.53048683699771","1","0"
+"Combining text with structured knowledge is a
+long-standing challenge in NLP. While earlier work
+focused more on the text-to-KG alignment itself,
+using rule-based systems and templates, recent
+work often approaches the problem as a part of a
+system intended for other NLP tasks than the align-
+ment itself, such as question answering (Yasunaga
+et al., 2021), language modelling (Kaur et al., 2022)
+and text summarization (Feng et al., 2021).","441","0.1183871011094","0.3572398227797","0.48876359528689","0.49894847830477","9","1"
+"As a consequence, approaches to what is essen-
+tially the same problem, namely to align some
+relevant subspace of a large KG with a piece of
+text, can be found under a range of terms, such
+as: retrieval (Feng et al., 2021; Kaur et al., 2022;
+Sun et al., 2022; Wang et al., 2020), extraction
+(Huang et al., 2021; Feng et al., 2020), KG-to-
+text-alignment (Agarwal et al., 2021), linking (Gao
+et al., 2022; Becker et al., 2021), grounding (Shu
+et al., 2022; Lin et al., 2019), and mapping (Yu
+et al., 2022). Although it is natural to use multi-
+ple of these terms to describe a specific technique,
+we argue that it would be beneficial to refer to the
+task itself under a common name and propose the
+term text-to-KG alignment. The following sections
+formalise the task and discuss current approaches
+found in the literature.","821","0.1183871011094","0.081375992588105","0.48876355558044","0.35183424722945","17","1"
+"2.1 Task definition","19","0.5142858102796","0.69748066623906","0.67146895003326","0.71043853484422","1","0"
+"The task of text-to-KG alignment involves two in-
+put elements: a piece of natural text and a KG. The
+KG is often a multi-relational graph, G = (V, E),
+where V is a set of entity nodes and E is the set
+of edges connecting the nodes in V . The task is to
+align the text with a subset of the KG that is relevant
+to the text. What defines relevance is dependent on
+the specific use case. For example, given the ques-
+tion Where is the most famous church in France
+located? and the KG found in Figure 1, a well-
+executed text-to-KG alignment could, for example,
+link the spans church and France from the text to
+their corresponding entity nodes in the KG and re-
+turn a subgraph that contains the minimal amount
+of nodes and edges required in order to guide any
+downstream system towards the correct behaviour.","806","0.51362561232101","0.43505521433917","0.88401172771202","0.68941991756643","16","1"
+"2.2 Current approaches","22","0.5142858102796","0.40826117200584","0.71316087529146","0.42121904061101","1","0"
+"Although the possibilities are many, most current
+approaches to text-to-KG alignment base them-
+selves on some form of lexical overlap. As noted in
+Aglionby and Teufel (2022); Becker et al. (2021);
+Sun et al. (2022), the idiosyncratic phrasings often
+found in KGs make this problematic. One specific
+implementation based on lexical overlap is the one
+found in Lin et al. (2019), which has been later
+reused in a series of other works on QA without
+any major modifications (Feng et al., 2020; Ya-
+sunaga et al., 2021; Zhang et al., 2022; Yasunaga
+et al., 2022; Sun et al., 2022).","578","0.51362561232101","0.21021111356591","0.88398891169138","0.40020161113685","12","1"
+"In the approach of Lin et al. (2019), a schema
+graph is constructed from each question-answer
+pair. The first step involves recognising concepts
+mentioned in the text that exists in the KG. Al-
+though they note that exact n-gram matches are not
+ideal, due to idiosyncratic phrasings and sparsity,
+they do little to improve on this naive approach
+besides lemmatisation and filtering of stop words,","396","0.5142858102796","0.081375992588105","0.88398891169138","0.20699109669909","8","1"
+"Figure 2: An example of the different graph construction approaches for COPA-SSE (Brassard et al., 2022). Here,
+the premise and answer options are: P: The bodybuilder lifted weights; A1: The gym closed; A2: Her muscles
+became fatigued, from left to right: Purple: Gold annotation, Brown: Approach 3, Green: Approach 2, and Blue:
+Approach 1.","340","0.11844421747223","0.7036989136348","0.8832765775237","0.75813310337455","4","1"
+"leaving it for future work. The enhanced n-gram
+matching produces two sets of entities, one from
+the question and one from the answer, Vq and Va.
+The graph itself is then constructed by adding the
+k-hop paths between the nodes in these two sets,
+with k often being 2 or 3. This returns a graph
+that contains a lot of noise in terms of irrelevant
+nodes found in the k-hop neighbourhoods of Vq
+and Va and motivates some form of pruning ap-
+plied to Gsub before it is used together with the
+PLM, such as node relevance scoring (Yasunaga
+et al., 2021), dynamic pruning via LM-to-KG atten-
+tion (Kaur et al., 2022), and ranking using sentence
+representations of the question and answer pair and
+a linearized version of Gsub (Kaur et al., 2022).","739","0.1183871011094","0.43604960339237","0.4889208039632","0.67546916390502","15","1"
+"Another approach based on lexical matching is
+from Becker et al. (2021), which is specifically de-
+veloped for ConceptNet. Candidate phrases are
+first extracted from the text using a constituency
+parser, limited to noun, verb and adjective phrases.
+These are then lemmatized and filtered for articles,
+pronouns, conjunctions, interjections and punctu-
+ation. The same process is also applied to all the
+nodes in ConceptNet. This makes it possible to
+match the two modalities better, as both are nor-
+malised using the same pre-processing pipeline.
+Results on two QA dataset show that the proposed
+method is able to align more meaningful concepts
+and that the ratio between informative and unin-
+formative concepts are superior to simple string
+matching. For the language modelling task, Kaur
+et al. (2022) uses a much simpler technique where a
+Named Entity Recognition model identifies named
+entity mentions in text and selects entities with the
+maximum overlap in the KG.","972","0.11847949522574","0.1144432579078","0.48892651450252","0.43318335459502","20","1"
+"For the tasks of text summarisation and story
+ending generation, Feng et al. (2021) and Guan","92","0.119047299068","0.081375992588105","0.48636490458208","0.11042741260735","2","1"
+"et al. (2019) use RNN-based architectures that read
+a text sequence word by word, and at each time
+step the current word is aligned to a triple from
+ConceptNet (We assume by lexical overlap). Each
+triple, and also its neighbours in the KG, is encoded
+using word embeddings and then combined with
+the context vector from the RNN using different
+attention style mechanisms.","371","0.5142858102796","0.54985405979403","0.88096070345856","0.67546916390502","8","1"
+"As an alternative to these types of approaches
+based on some form of lexical matching for the
+alignment, Aglionby and Teufel (2022) experi-
+mented with embedding each entity in the KG us-
+ing a PLM, and then for each question answer pair
+find the most similar concepts using euclidean dis-
+tance. They conclude that this leads to graphs that
+are more specific to the question-answer pair, and
+that this helps performance in some cases. Wang
+et al. (2020) also experimented with using a PLM
+to generate the graphs instead of aligning them, re-
+lying on KGs such as ConceptNet as a fine-tuning
+dataset for the PLM instead of as a direct source
+during alignment. In a QA setting, the model is
+trained to connect entities from question-answer
+pairs with a multi-hop path. The generated paths
+can then be later used for knowledge-enhanced sys-
+tems. This has the benefit of being able to use
+all the knowledge acquired during the PLMs pre-
+training, which might result in concepts that are
+not present in KGs.","1004","0.5142858102796","0.21147018541615","0.8840021064985","0.54630383351744","21","1"
+"3 KG and Datasets","17","0.5142858102796","0.1816346116476","0.69057839657571","0.19583504163252","1","0"
+"This section explains the data used in our own ex-
+periments.","61","0.51371800643735","0.13984087517372","0.8840027422772","0.16889348299659","2","1"
+"ConceptNet As our knowledge graph, we use
+ConceptNet (Speer et al., 2017) — a general-
+domain KG that contains 799, 273 nodes and","129","0.51368104879081","0.081375992588105","0.88399038837783","0.1266128569053","3","1"
+"Figure 4: An example of a manually created graph from
+COPA-SSE (Brassard et al., 2022) for the premise and
+options: P: The man felt ashamed of a scar on his face;
+A1: He hid the scar with makeup; A2: He explained the
+scar to strangers.","235","0.51326443532076","0.77852120609581","0.88234104176483","0.84688460297664","5","1"
+"nation graphs per sample. Five annotators have
+also rated the quality of each graph with respect
+to how well it captures the relationship between
+the premise and the correct answer choice. As we
+only need one graph per sample, we select the one
+with the highest average rating. As the official
+COPA-SSE set does not contain any training data,
+we keep the official development split as our train-
+ing data and split the official test data by half for
+our in-house development and testing set.","491","0.51362561232101","0.59101145565335","0.88398735452126","0.7488136625925","10","1"
+"4 Alignment approaches","22","0.5142858102796","0.56052377769067","0.73763393652692","0.57472420767559","1","0"
+"As mentioned, the general procedure for grounding
+text to a graph is three-fold: we first have to identify
+entities mentioned in the text, then link them to enti-
+ties in the graph, and lastly construct a graph object
+that is returned to the inference model as additional
+context to be used together with the original text.
+For QA the text aligned with the graph is typically
+a combination of the question and answer choices.
+As our two downstream tasks are not QA, and also
+different from each other, we have to rely on differ-
+ent pre-processing techniques than previous work.
+The following section presents the implementation
+of three different text-to-KG alignment approaches
+that we compare against manually created graphs.
+An illustration of the different approaches applied
+to the same text sample can be seen in Figure 2.","829","0.51362561232101","0.29294995118127","0.88416792124124","0.54731465440853","16","1"
+"4.1 Approach 1: Basic String Matching","37","0.5142858102796","0.26436113755954","0.83378340366485","0.2773190061647","1","0"
+"Our first approach establishes a simple baseline
+based on naive string matching. For ExplaGraphs,
+we first word-tokenize the belief and argument
+on whitespace, and then for each word we check
+whether or not it is a concept in ConceptNet by
+exact lexical overlap. This gives us two sets of
+entities: Cq and Ca. The graph is constructed by
+finding paths in ConceptNet between the concepts
+in Cq and Ca. For COPA-SSE, we do the same but
+create Cq from a concatenation of the premise and
+the first answer choice, and Ca from a concatena-","533","0.51362561232101","0.080395064200786","0.88400123888079","0.25527175094133","11","1"
+"Figure 3: An example graph from ExplaGraphs (Saha
+et al., 2021) generated by a PLM for the belief argument
+pair: Organ transplant is important; A patient with
+failed kidneys might not die if he gets organ donation.","214","0.119047299068","0.68726921379278","0.48571870822946","0.74170459133616","4","1"
+"2, 487, 810 edges. The graph is structured as a col-
+lection of triples, each containing a head and tail
+entity connected via a relation from a pre-defined
+set of types.","169","0.11858868827233","0.59779619000107","0.48875540023787","0.65932097376142","4","1"
+"ExplaGraphs ExplaGraphs (Saha et al., 2021) is
+originally a graph generation task for binary stance
+prediction. Given a belief and argument pair (b,a),
+models should both classify whether the argument
+counters or supports the belief and construct a struc-
+tured explanation as to why this is the correct label.
+An example of this can be seen in Figure 3.","354","0.1183871011094","0.4763860295288","0.48892523167405","0.58599709950231","7","1"
+"The original dataset provides a train (n = 2367)
+and validation (n = 397) split, as well as a test set
+that is kept private for evaluation on a leaderboard.
+The node labels have been written by humans using
+free-form text, but the edge labels are limited to the
+set of relation types used in ConceptNet. We con-
+catenate the train and validation split and partition
+the data into a new train, validation and test split
+with an 80–10–10 ratio.","442","0.1183871011094","0.33153931558755","0.48891835937867","0.47353304422193","9","1"
+"COPA-SSE Introduced in Brassard et al. (2022),
+COPA-SSE adds semi-structured explanations cre-
+ated by human annotators to 1500 samples from
+Balanced COPA (Kavumba et al., 2019) — which
+is an extension to the original COPA dataset from
+Roemmele et al. (2011). In this task, given a sce-
+nario as a premise, models have to select the al-
+ternative that more plausibly stands in a causal
+relation with the premise. An example with a man-
+ually constructed explanation graph can be seen
+in Figure 4. As with ExplaGraphs, COPA-SSE
+uses free-form text for the head and tail entities of
+the triples and limits the relation types to the ones
+found in ConceptNet.","655","0.119047299068","0.09747191960945","0.48875795084163","0.31974022508879","14","1"
+"The dataset provides on average over six expla-","47","0.13737325207131","0.081375992588105","0.48875124042713","0.094333861193268","1","1"
+"tion of the premise and the second answer choice.
+We use Dijkstra’s algorithm to find the paths (Dijk-
+stra, 1959).2 The reason to use this rather simple
+approach, also pointed out by Lin et al. (2019) and
+Aglionby and Teufel (2022), is that finding a min-
+imal spanning graph that covers all the concepts
+from Cq and Ca, which seems like a more obvious
+choice, would be to solve the NP-complete ""Steiner
+tree problem"" (Garey and Johnson, 1977), and this
+would be too resource demanding given the size of
+ConceptNet.","516","0.11818551394647","0.73907117841998","0.48892843874522","0.91296693677321","11","1"
+"As many of the retrieved paths are irrelevant to
+the original text, it is common to implement some
+sort of pruning. We follow Kaur et al. (2022) and
+linearize the subject-relation-object triples
+to normal text and then embed them into the same
+vector space as the original context using the Sen-
+tenceTransformer (Reimers and Gurevych, 2019).
+We then calculate the cosine similarity between the
+linearized graphs and the original text context and
+select the one with the highest score.","485","0.11818551394647","0.57813328867192","0.4889236189754","0.73593549561107","10","1"
+"4.2 Approach 2: Enhanced String Matching","40","0.119047299068","0.55178348489708","0.47521546055947","0.56474135350224","1","0"
+"Our second approach is based on the widely used
+method from Lin et al. (2019), found in the works
+of Feng et al. (2020); Yasunaga et al. (2021); Zhang
+et al. (2022); Yasunaga et al. (2022); Sun et al.
+(2022), but modified to our use case. We construct
+the set of entities Cq and Ca using n-gram match-
+ing enhanced with lemmatisation and filtering of
+stop words.3 As in Approach 1, for ExplaGraphs,
+Cq is constructed from the belief, and Ca from
+the argument; for COPA-SSE, Cq is based on a
+concatenation of the premise and the first answer
+choice, while Ca is based on a concatenation of the
+premise and the second answer choice.","630","0.11844253757921","0.33780854315885","0.48891863427049","0.54389140434023","13","1"
+"The graph is constructed by finding paths in Con-
+ceptNet from concepts in between Cq and Ca using
+the same method as in Approach 1. However, we
+limit the length of the paths to a variable k. In the
+aforementioned works, k is set as to retrieve ei-
+ther two or three-hop paths, essentially finding the
+2-hop or 3-hop neighbourhoods of the identified
+concepts. For our experiments, we set k = 3.","394","0.119047299068","0.20905775623894","0.48875900175381","0.33467286034993","8","1"
+"As with Approach 1, many of the retrieved paths
+are irrelevant to the original text which warrants
+some sort of pruning strategy. In the aforemen-
+tioned works, this is done by node relevance scor-
+ing. We follow Approach 1 and use sentence repre-","247","0.119047299068","0.12858881136491","0.48876332039508","0.20592207343002","5","1"
+"2Using the implementation from https://networkx.org
+3We use the implementation from Yasunaga et al. (2021)","106","0.14030298550588","0.093708510137904","0.48671911847815","0.11898756179548","2","0"
+"sentations via linearization and cosine similarity in
+order to prune irrelevant paths from the graph.","101","0.5142858102796","0.88391551675397","0.88095450922967","0.91296693677321","2","1"
+"4.3 Approach 3: Path Generator","30","0.5142858102796","0.85713929147513","0.78113245805307","0.8700971600803","1","0"
+"Our third approach is based on a method where a
+generative LM is fine-tuned on the task of generat-
+ing paths between concepts found in two sets. We
+use the implementation and already trained path
+generator (PG) from Wang et al. (2020) for this
+purpose. This model is a GPT-2 model (Radford
+et al., 2019) fine-tuned on generating paths between
+two nodes in ConceptNet. 4 One advantage of this
+method is that since GPT-2 already has unstruc-
+tured knowledge encoded in its parameters from
+its original pre-training, it is able to generate paths
+between entities that might not exist in the original
+graph.","604","0.5142858102796","0.64300518405017","0.88400108023572","0.84908923303519","13","1"
+"For both ExplaGraphs and COPA-SSE, we take
+the first and last entity identified by the entity linker
+from Approach 2 as the start and end points of the
+PG. As the model only returns one generated path,
+we do not perform any pruning. For the follow-
+ing example from COPA-SSE, P: The man felt
+ashamed of a scar on his face; A1: He hid the
+scar with makeup; A2: He explained the scar to
+strangers., the PG constructs the following path:
+masking tape used for hide scar, masking tape is a
+makeup.","493","0.51362561232101","0.46589416004466","0.88400164889564","0.63978991839789","11","1"
+"4.3.1 Start and end entities
+We also experiment with the same setup, but with
+the first and last entity from the gold annotations
+as the start and end points for the PG. We do this
+to assess the importance of having nodes that are
+at least somewhat relevant to the original context
+as input to the PG. In our experiments, we refer to
+this sub-method as Approach 3-G.","366","0.51342402515808","0.32504559312974","0.88096070345856","0.45382543812137","8","1"
+"4.4","3","0.5142858102796","0.29826936785091","0.53719346152037","0.31122723645607","1","0"
+"Integration technique","21","0.55551958251299","0.29826936785091","0.72503620169468","0.31122723645607","1","0"
+"As the focus of this work is not how to best com-
+bine structured data with PLMs, but rather to report
+on how current text-to-KG alignment methods com-
+pare to manually created graphs, we use a rather
+simple integration technique to combine the graphs
+with a pre-trained language model and use it uni-
+formly for the different alignment approaches. We
+conjecture that the ranking of the different linking
+approaches with this technique would be similar
+to a more complex method for reasoning over the
+graph structures, for example using GNNs. By not","549","0.51362561232101","0.11632355105774","0.8840021064985","0.29021930941097","11","1"
+"4See Wang et al. (2020) for details on the fine-tuning pro-","59","0.53553981682446","0.093708510137904","0.88345896454619","0.10609989238499","1","0"
+"to construct Cq and Ca","22","0.119047299068","0.081614398080509","0.25860320631102","0.092759052132701","1","0"
+"cedure.","7","0.5142858102796","0.081874422549264","0.55819326833267","0.09252474503795","1","0"
+"relying on another deep learning model for the in-
+tegration, we can better control the effect of the
+graph quality itself.","123","0.119047299068","0.86782077753626","0.48875369918156","0.91296693677321","3","1"
+"For each text and graph pair, we linearize the
+graph to text as in Kaur et al. (2022). For example,
+the graph in Figure 4 is transformed to the string
+masking tape used for hide scar, masking tape is
+a makeup. As linearization does not provide any
+natural way to capture the information provided by
+having directed edges, we transform all the graphs
+to undirected graphs before integrating them with
+the PLM 5. For a different integration technique,
+such as GNNs, it would probably be reasonable to
+maintain information about the direction of edges.
+For ExplaGraphs, which consists of belief and
+argument pairs, we feed the model with the follow-
+ing sequence: BELIEF [SEP] ARGUMENT [SEP]
+GRAPH [SEP], where [SEP] is a model-dependent
+separation token and the model classifies the se-
+quence as either support or counter.","821","0.119047299068","0.59332767273634","0.4887604615202","0.86423610495433","17","1"
+"For COPA-SSE, which has two options for each
+premise, we use the following format: PREMISE +
+GRAPH [SEP] A1 [SEP] and PREMISE + GRAPH
+[SEP] A2 [SEP], where + just adds the linearized
+graph to the premise as a string and the model has
+to select the most likely sequence of the two.","280","0.119047299068","0.49631618667522","0.48805653735343","0.58974300015441","6","1"
+"5 Graph quality","15","0.119047299068","0.46636064473981","0.27138032106115","0.48056107472473","1","0"
+"The following section provides an analysis of the
+quality of the different approaches when used to
+align graphs for both ExplaGraphs and COPA-SSE.
+Table 1 and Table 2 show the average number
+of triples per sample identified or created by the
+different approaches for the two datasets, as well
+as how many triples we count as containing some
+form of error (’Broken triples’ in the table). The
+criterion for marking a triple as broken includes
+missing head or tail entities inside the triple, having
+more than one edge between the head and tail, and
+returning nothing from ConceptNet. It is, of course,
+natural that not all samples contain an entity that
+can be found in ConceptNet, and consequently,
+we decided to not discard the broken triples but
+rather to include them to showcase the expected
+performance in a realistic setting.","831","0.1183871011094","0.18262556200929","0.48892523167405","0.45353399422727","17","1"
+"As can be seen from the tables, the approach
+based on the Path Generator (PG) from Wang et al.
+(2020) (Approach 3) returns fewer triples than the
+other approaches for both ExplaGraphs and COPA-","193","0.11844253757921","0.11780117877632","0.48892090670949","0.17904088942736","4","1"
+"5In practice, this is done by simply removing the under-","56","0.14030298550588","0.093708510137904","0.48822141022316","0.10609989238499","1","1"
+"score prepended to all reversed directions.","43","0.119047299068","0.081874422549264","0.37276161242852","0.09252474503795","1","1"
+"SSE. When using the entities from Approach 2 as
+the start and end points, denoted by the abbrevia-
+tion Approach 3, the number of triples containing
+some form of alignment error is over twenty per-
+cent. When using the gold annotation as the start
+and end point of the PG, abbreviated Approach
+3-G, this goes down a bit but is still considerably
+higher than the approaches based on lexical overlap.
+Approach 2 is able to identify some well-formatted
+triple in all of the cases for both tasks, while Ap-
+proach 1 fails to retrieve anything for five percent
+of the samples in COPA-SSE and two percent for
+ExplaGraphs.","615","0.51362561232101","0.70688288778819","0.88416374288565","0.91296693677321","13","1"
+"In order to get some notion of semantic similarity
+between the different approaches and the original
+context they are meant to be a structural representa-
+tion of, we calculate the cosine similarity between
+the context and a linearized (see Section 4.4 for
+details on this procedure) version of the graphs.
+The scores can be found in Table 3. Unsurprisingly,
+the similarity increases with the complexity of the
+approach. The basic string matching technique of
+Approach 1 creates the least similar graphs, fol-
+lowed by the tad more sophisticated Approach 2,
+while the generative approaches are able to cre-
+ate a bit more similar graphs despite having a low
+number of average triples per graph. All of the
+approaches are still far from the manually created
+graphs — which are also linearized using the same
+procedure as the others.","831","0.51362561232101","0.43211064913469","0.8841571454821","0.70257009157966","17","1"
+"Approach","8","0.51583971132718","0.40037656035824","0.57962979189485","0.41102688284693","1","0"
+"Avg. number of triples Broken triples","37","0.62249793104375","0.40037656035824","0.87940551408086","0.41102688284693","1","0"
+"Approach 1
+Approach 2
+Approach 3
+Approach 3-G
+Gold","50","0.51583971132718","0.3324712938745","0.60241949482257","0.39261264250674","5","0"
+"2.90
+2.90
+1.39
+1.64
+2.12","24","0.6811243859991","0.33270560096925","0.70864719209241","0.39284694960149","5","0"
+"0.05
+0.00
+0.20
+0.12
+0.00","24","0.81961331335381","0.33270560096925","0.84713589313193","0.39284694960149","5","0"
+"Table 1: Statistics for the different approaches on the
+training set of COPA-SSE. The number of broken triples
+is reported as percentages.","138","0.51376672333506","0.27522250935395","0.88095506603324","0.31545650666952","3","1"
+"Approach","8","0.51583971132718","0.2264120281747","0.57962979189485","0.23706235066339","1","0"
+"Avg. number of triples Broken triples","37","0.62249793104375","0.2264120281747","0.87940551408086","0.23706235066339","1","0"
+"Approach 1
+Approach 2
+Approach 3
+Approach 3-G
+Gold","50","0.51583971132718","0.15850557388732","0.60241949482257","0.2186481103232","5","0"
+"2.99
+3.03
+1.34
+1.58
+4.23","24","0.6811243859991","0.15873988098208","0.70864719209241","0.21888241741795","5","0"
+"0.02
+0.00
+0.21
+0.15
+0.00","24","0.81961331335381","0.15873988098208","0.84713589313193","0.21888241741795","5","0"
+"Table 2: Statistics for the different approaches on the
+training set of ExplaGraphs. The number of broken
+triples is reported as percentages.","141","0.51376672333506","0.10125678936678","0.88095004520256","0.14149197448598","3","1"
+"Approach","8","0.15921522117472","0.90065213080094","0.22300530174239","0.91130245328962","1","0"
+"ExplaGraphs COPA-SSE","20","0.26587344089128","0.90065213080094","0.44554004797774","0.91130245328962","1","0"
+"Approach","8","0.5544520524933","0.90065213080094","0.61824213306097","0.91130245328962","1","0"
+"ExplaGraphs COPA-SSE","20","0.66111027220987","0.90065213080094","0.84079194188914","0.91130245328962","1","0"
+"Approach 1
+Approach 2
+Approach 3
+Approach 3-G
+Gold","50","0.15921522117472","0.83274686431719","0.2457950046701","0.89288821294944","5","0"
+"0.39
+0.45
+0.48
+0.55
+0.75","24","0.2952244001102","0.83298117141194","0.32274720620351","0.89312252004419","5","0"
+"0.32
+0.42
+0.45
+0.46
+0.57","24","0.3951079020824","0.83298117141194","0.42262356607691","0.89312252004419","5","0"
+"Table 3: The different graphs and their average cosine
+similarity with the original text.","89","0.11852821212345","0.78969827222084","0.48571722426841","0.81573207711221","2","1"
+"Figure 5: The graph aligned with ConceptNet for both
+the approaches based on lexical overlap. The original
+COPA-SSE context is Premise: The women met for
+coffee Alt 1: The cafe reopened in a new location; Alt 2:
+They wanted to catch up with each other","251","0.11810991876037","0.59968905462709","0.48849460265154","0.66805245150792","5","1"
+"6 Experiments","13","0.119047299068","0.54769549846179","0.25850682506938","0.56189592844671","1","0"
+"We now present experiments where we compare
+the discussed approaches to text-to-KG alignment
+for ExplaGraphs and COPA-SSE. As our PLM, we
+use BERT (Devlin et al., 2019) for all experiments.
+We use the base version and conduct a hyperparam-
+eter grid search for both tasks. We do the same
+search both with and without any appended graphs
+as the former naturally makes it easier to overfit
+the data, especially since both ExplaGraphs and
+COPA-SSE are relatively small in size. The grid
+search settings can be found in Appendix A.2 and
+the final hyperparameters in Appendix A.3. We run
+all experiments over ten epochs with early stopping
+on validation loss with a patience value of five.","684","0.11818551394647","0.30096049887753","0.48892892073727","0.52313809927663","14","1"
+"As few-sample fine-tuning with BERT is known
+to show instability (Zhang et al., 2021), we run
+all experiments with ten random seeds and report
+the mean accuracy scores together with standard
+deviations. We use the same random seeds for both
+tasks; they can be found in Appendix A.4.","282","0.119047299068","0.19921561534167","0.48572219224696","0.29264242882087","6","1"
+"We find that the experiments are highly suscep-
+tible to seed variation. Although we are able to
+match the performance of some previous work for
+the same PLM on some runs, this does not hold
+across seeds. Consequently, we also perform out-
+lier detection and removal. Details on this proce-
+dure can be found in Appendix A.5.","325","0.119047299068","0.081375992588105","0.48875124042713","0.19089635748138","7","1"
+"No graph
+Approach 1
+Approach 2
+Approach 3
+Approach 3-G
+Gold","59","0.5544520524933","0.81601427454893","0.64103351588171","0.89207219185404","6","0"
+"69.67±3.36
+66.46±8.48
+70.03±2.71
+73.55±1.66
+70.57±3.27
+80.28±2.31","65","0.67022859984276","0.81624858164368","0.73738202568221","0.89396945634228","6","0"
+"67.05±2.07
+51.20±2.08
+53.33±1.80
+56.20±8.39
+85.86±0.75
+96.60±0.28","65","0.77010495971617","0.81624858164368","0.83725838555561","0.89396945634228","6","0"
+"Table 4: Results of the different approaches on Expla-
+Graphs and COPA-SSE. Results are reported as average
+accuracy over ten runs together with standard deviations
+after outlier removal, if any.","195","0.51376672333506","0.7445652976042","0.88372562734597","0.79899948734395","4","1"
+"7 Results","9","0.5142858102796","0.70498920666595","0.60689063090062","0.71918963665087","1","0"
+"Table 4 shows the results on ExplaGraphs and
+COPA-SSE. For both datasets, we observe the fol-
+lowing: Methods primarily based on lexical over-
+lap provide no definitive improvement. The perfor-
+mance of Approach 1 (String matching) and Ap-
+proach 2 (String matching with added lemmatisa-
+tion and stop word filtering) is within the standard
+deviation of the experiments without any appended
+graph data, and might even impede the performance
+by making it harder to fit the data by introducing
+noise from the KG that is not relevant for the clas-
+sification at hand.","564","0.51371800643735","0.50372570573353","0.884003242718","0.69371501550084","12","1"
+"For Approach 3, based on a generative model,
+we see that it too provides little benefit for Expla-
+Graphs, but that when it has access to the gold
+annotation entities as the start and end point of the
+paths, it performs significantly better than having
+access to no graphs at all for COPA-SSE.","293","0.51362561232101","0.40716202164178","0.88400164889564","0.50058883512098","6","1"
+"For both tasks, having access to manually cre-","46","0.53261176328291","0.3910684702277","0.88399607415048","0.40402633883286","1","1"
+"ated graphs improves performance significantly.","47","0.5142858102796","0.37497491881362","0.86627561618476","0.38793278741878","1","1"
+"8 Discussion","12","0.5142858102796","0.34701607478412","0.6348066362494","0.36121650476903","1","0"
+"The most striking result is perhaps the performance
+of Approach 3-G on COPA-SSE. We hypothesise
+that this can be explained by the fact that anno-
+tators probably used exact spans from both the
+premise and the correct alternative from the text
+in their graphs, and consequently, they provide a
+strong signal as to why there is a relation between
+the premise and the correct answer choice and not
+the wrong one. This is easily picked up by the
+model. For ExplaGraphs, which is a text classifi-
+cation problem, this is not the case: the appended
+graph might provide some inductive bias, but it
+does not provide a direct link to the correct choice,
+as the task is to assign a label to the whole sequence,
+not to choose the most probable sequence out of
+two options. This conclusion is further supported","798","0.51371800643735","0.081375992588105","0.88398891169138","0.33574069581537","16","1"
+"Figure 6: The train loss curves for the different approaches on COPA-SSE.","73","0.24960354524624","0.69306569551842","0.75039793272364","0.7048993079856","1","1"
+"by the observation that appending the manually
+constructed graphs in their entirety has a much
+larger effect on COPA-SSE than ExplaGraphs.","138","0.119047299068","0.61968978655169","0.48635774212298","0.66483594578864","3","1"
+"Furthermore, for COPA-SSE, as pointed out in
+Table 1, the average triple length for the generative
+approaches is rather low, so the majority of the
+aligned graphs from Approach 3-G are actually
+from the manually written text, not generated by
+the model itself.","260","0.11847949522574","0.519517555025","0.48635774212298","0.6129443685042","6","1"
+"The key finding of our experiments is that hav-
+ing access to structured knowledge relevant to the
+sample at hand, here represented by the gold an-
+notations, provides a significant increase in perfor-
+mance even with a simple injection technique and
+judging by today’s standards, a small pre-trained
+language model. They also show that for datasets of
+low sample sizes, such as ExplaGraphs and COPA-
+SSE, the results are susceptible to noise. As the
+approaches based on lexical overlap are within the
+standard deviations of the experiments without any
+appended graphs, it is not possible to conclude
+that they add any useful information to the model.
+Based on Figure 6, we think it is fair to conclude
+that these methods based on lexical overlap only
+provide a signal that has no relation to the correct
+label. As to why the approaches based on lexical
+matching do not have any effect here but reportedly
+have an effect in previous work on QA, there is
+one major reason that has not been discussed so
+far: namely that both datasets require knowledge
+that is not represented in ConceptNet. As shown
+by Bauer and Bansal (2021), matching the task
+with the right KG is important. It is reasonable to
+question whether or not ConceptNet, which aims
+to represent commonsense and world knowledge,
+does indeed contain information useful for deciding","1341","0.1183871011094","0.081375992588105","0.48892028362138","0.51277213697751","27","1"
+"whether or not an argument counters or supports
+a belief, in the case of ExplaGraphs, or if it can
+aid in the selection of the most likely follow-up
+scenario to a situation, in the case of COPA-SSE.
+In Figure 5, both the approaches based on lexical
+overlap (1 & 2) align the same exact graph with
+the text context, and judging from the result, it is
+pretty clear that the aligned graph has little to offer
+in terms of guiding the model towards the most
+likely follow-up.","470","0.51362561232101","0.50703373884949","0.8841571454821","0.66483594578864","10","1"
+"9 Conclusion","12","0.5142858102796","0.4772183577427","0.64038983731916","0.49141878772761","1","0"
+"In this work, we find that the process of identify-
+ing and retrieving the most relevant information
+in a knowledge graph is found under a range of
+different names in the literature and propose the
+term text-to-KG alignment. We systematise current
+approaches for text-to-KG alignment and evaluate
+a selection of them on two different tasks where
+manually created graphs are available, providing
+insights into how they compare to a scenario where
+the aligned graph is completely relevant to the text.
+Our experiments show that having access to such
+a graph could help performance significantly, and
+that current approaches based on lexical overlap
+are unsuccessful under our experimental setup, but
+that a generative approach using a PLM to gener-
+ate a graph based on manually written text as start
+and end entities adds a significant increase in per-
+formance for multiple-choice type tasks, such as
+COPA-SSE. For the approaches based on lexical
+overlap, we hypothesise that the lack of perfor-
+mance increase can be attributed to the choice of
+knowledge graph, in our case ConceptNet, which
+might not contain any information useful for solv-
+ing the two tasks.","1162","0.5142858102796","0.081375992588105","0.88415549613121","0.46449148273527","24","1"
+"Limitations","11","0.119047299068","0.89984007791992","0.21835999435556","0.91404050790483","1","0"
+"While there is a lot of work on creating and making
+available large pre-trained language models for a
+range of languages, there is to our knowledge not
+that many knowledge graphs for other languages
+than English — especially general knowledge ones,
+like ConceptNet. This is a major limitation, as it
+restricts research to one single language and the
+structured representation of knowledge found in
+the culture associated with that specific group of
+language users. Creating commonsense KGs from
+unstructured text is a costly process that requires
+financial resources for annotation as well as avail-
+able corpora to extract the graph from.","639","0.11818551394647","0.6795408359762","0.48874919095579","0.88562488496122","13","1"
+"Ethics Statement","16","0.119047299068","0.64764679851287","0.26463227948044","0.66184722849778","1","0"
+"We do not foresee that combining knowledge
+graphs with pre-trained language models in the way
+done here, add to any of the existing ethical chal-
+lenges associated with language models. However,
+this rests on the assumption that the knowledge
+graph does not contain any harmful information
+that might inject or amplify unwanted behaviour in
+the language model.","360","0.11818551394647","0.50781768924681","0.48875040047978","0.63343160555417","8","1"
+"References","10","0.119047299068","0.46105710152158","0.21235504068701","0.47525753150649","1","0"
+"Oshin Agarwal, Heming Ge, Siamak Shakeri, and Rami
+Al-Rfou. 2021. Knowledge graph based synthetic
+corpus generation for knowledge-enhanced language
+model pre-training. In Proceedings of the 2021 Con-
+ference of the North American Chapter of the Asso-
+ciation for Computational Linguistics: Human Lan-
+guage Technologies, pages 3554–3565, Online. As-
+sociation for Computational Linguistics.","390","0.119047299068","0.34697297556688","0.48849900595052","0.44992538027533","8","0"
+"Guy Aglionby and Simone Teufel. 2022. Identifying
+relevant common sense information in knowledge
+In Proceedings of the First Workshop on
+graphs.
+Commonsense Representation and Reasoning (CSRR
+2022), pages 1–7, Dublin, Ireland. Association for
+Computational Linguistics.","269","0.119047299068","0.25418175581133","0.48600277371841","0.33110106831059","7","0"
+"Lisa Bauer and Mohit Bansal. 2021. Identify, align, and
+integrate: Matching knowledge graphs to common-
+sense reasoning tasks. In Proceedings of the 16th
+Conference of the European Chapter of the Associ-
+ation for Computational Linguistics: Main Volume,
+pages 2259–2272, Online. Association for Computa-
+tional Linguistics.","323","0.119047299068","0.148374583853","0.4884966184627","0.23831103635867","7","0"
+"Maria Becker, Katharina Korfhage, and Anette Frank.
+2021. COCO-EX: A tool for linking concepts from
+texts to ConceptNet. In Proceedings of the 16th Con-
+ference of the European Chapter of the Association","203","0.119047299068","0.081891005000653","0.48864771576882","0.13250386440034","4","0"
+"for Computational Linguistics: System Demonstra-
+tions, pages 119–126, Online. Association for Com-
+putational Linguistics.","123","0.53261176328291","0.87421762748102","0.88373648962162","0.91235769304779","3","0"
+"Kurt Bollacker, Colin Evans, Praveen Paritosh, Tim
+Sturge, and Jamie Taylor. 2008. Freebase: a collabo-
+ratively created graph database for structuring human
+knowledge. In Proceedings of the 2008 ACM SIG-
+MOD international conference on Management of
+data, pages 1247–1250.","273","0.5142858102796","0.78490548456449","0.88373197505157","0.86182479706375","6","0"
+"Ana Brassard, Benjamin Heinzerling, Pride Kavumba,
+and Kentaro Inui. 2022. COPA-SSE: Semi-structured
+explanations for commonsense reasoning. In Pro-
+ceedings of the Thirteenth Language Resources and
+Evaluation Conference, pages 3994–4000, Marseille,
+France. European Language Resources Association.","298","0.5142858102796","0.69559334164796","0.88373217335824","0.77251265414722","6","0"
+"Ting-Yun Chang, Yang Liu, Karthik Gopalakrishnan,
+Behnam Hedayatnia, Pei Zhou, and Dilek Hakkani-
+Tur. 2020. Incorporating commonsense knowledge
+graph in pretrained models for social commonsense
+tasks. In Proceedings of Deep Learning Inside Out
+(DeeLIO): The First Workshop on Knowledge Extrac-
+tion and Integration for Deep Learning Architectures,
+pages 74–79, Online. Association for Computational
+Linguistics.","412","0.5142858102796","0.56722977871218","0.88373005039981","0.68320051123068","9","0"
+"Jacob Devlin, Ming-Wei Chang, Kenton Lee, and
+Kristina Toutanova. 2019. BERT: Pre-training of
+deep bidirectional transformers for language under-
+standing. In Proceedings of the 2019 Conference of
+the North American Chapter of the Association for
+Computational Linguistics: Human Language Tech-
+nologies, Volume 1 (Long and Short Papers), pages
+4171–4186, Minneapolis, Minnesota. Association for
+Computational Linguistics.","422","0.5142858102796","0.43886740358004","0.88373594974331","0.55483694829491","9","0"
+"Edsger Wybe Dijkstra. 1959. A note on two problems
+in connexion with graphs. Numerische Mathematik,
+1:269–271.","110","0.5142858102796","0.38860668068275","0.88304427836835","0.42647338535913","3","0"
+"Xiachong Feng, Xiaocheng Feng, and Bing Qin. 2021.
+Incorporating commonsense knowledge into abstrac-
+tive dialogue summarization via heterogeneous graph
+In Chinese Computational Linguistics:
+networks.
+20th China National Conference, CCL 2021, Hohhot,
+China, August 13–15, 2021, Proceedings, pages 127–
+142. Springer.","316","0.5142858102796","0.2862773977598","0.88388826555077","0.37621266246184","8","0"
+"Yanlin Feng, Xinyue Chen, Bill Yuchen Lin, Peifeng
+Wang, Jun Yan, and Xiang Ren. 2020. Scalable multi-
+hop relational reasoning for knowledge-aware ques-
+In Proceedings of the 2020 Con-
+tion answering.
+ference on Empirical Methods in Natural Language
+Processing (EMNLP), pages 1295–1309, Online. As-
+sociation for Computational Linguistics.","340","0.5142858102796","0.18394811483686","0.88373748122921","0.27388337953889","8","0"
+"Silin Gao, Jena D. Hwang, Saya Kanno, Hiromi Wakaki,
+Yuki Mitsufuji, and Antoine Bosselut. 2022. Com-
+Fact: A benchmark for linking contextual common-
+In Findings of the Association
+sense knowledge.
+for Computational Linguistics: EMNLP 2022, pages
+1656–1675, Abu Dhabi, United Arab Emirates. Asso-
+ciation for Computational Linguistics.","336","0.5142858102796","0.081618831913908","0.88373602518832","0.17155528441958","8","0"
+"Michael R Garey and David S. Johnson. 1977. The
+rectilinear steiner tree problem is np-complete. SIAM
+Journal on Applied Mathematics, 32(4):826–834.","148","0.119047299068","0.87421762748102","0.48571443061034","0.91208551996104","3","0"
+"Jian Guan, Yansen Wang, and Minlie Huang. 2019.
+Story ending generation with incremental encod-
+ing and commonsense knowledge. Proceedings
+of the AAAI Conference on Artificial Intelligence,
+33(01):6473–6480.","207","0.119047299068","0.79792262457091","0.48864771576882","0.86182479706375","5","0"
+"Canming Huang, Weinan He, and Yongmei Liu. 2021.
+Improving unsupervised commonsense reasoning us-
+ing knowledge-enabled natural language inference.
+In Findings of the Association for Computational
+Linguistics: EMNLP 2021, pages 4875–4885, Punta
+Cana, Dominican Republic. Association for Compu-
+tational Linguistics.","315","0.119047299068","0.69559334164796","0.48863960348477","0.78552860635","7","0"
+"Yong-Ho Jung, Jun-Hyung Park, Joon-Young Choi,
+Mingyu Lee, Junho Kim, Kang-Min Kim, and
+SangKeun Lee. 2022. Learning from missing rela-
+tions: Contrastive learning with commonsense knowl-
+edge graphs for commonsense inference. In Findings
+of the Association for Computational Linguistics:
+ACL 2022, pages 1514–1523, Dublin, Ireland. As-
+sociation for Computational Linguistics.","377","0.119047299068","0.5802469187186","0.48849399939524","0.68320051123068","8","0"
+"Jivat Kaur, Sumit Bhatia, Milan Aggarwal, Rachit
+Bansal, and Balaji Krishnamurthy. 2022. LM-CORE:
+Language models with contextually relevant external
+knowledge. In Findings of the Association for Com-
+putational Linguistics: NAACL 2022, pages 750–769,
+Seattle, United States. Association for Computational
+Linguistics.","318","0.119047299068","0.47791882359928","0.48848975266397","0.56785408830132","7","0"
+"Pride Kavumba, Naoya Inoue, Benjamin Heinzerling,
+Keshav Singh, Paul Reisert, and Kentaro Inui. 2019.
+When choosing plausible alternatives, clever hans can
+be clever. In Proceedings of the First Workshop on
+Commonsense Inference in Natural Language Pro-
+cessing, pages 33–42, Hong Kong, China. Associa-
+tion for Computational Linguistics.","338","0.119047299068","0.37558954067634","0.4886375951525","0.46552480537837","7","0"
+"Anne Lauscher, Olga Majewska, Leonardo F. R. Ribeiro,
+Iryna Gurevych, Nikolai Rozanov, and Goran Glavaš.
+2020. Common sense or world knowledge? in-
+vestigating adapter-based knowledge injection into
+In Proceedings of Deep
+pretrained transformers.
+Learning Inside Out (DeeLIO): The First Workshop
+on Knowledge Extraction and Integration for Deep
+Learning Architectures, pages 43–49, Online. Asso-
+ciation for Computational Linguistics.","434","0.119047299068","0.24722597774056","0.48864161181704","0.36319552245543","10","0"
+"Bill Yuchen Lin, Xinyue Chen, Jamin Chen, and Xiang
+Ren. 2019. KagNet: Knowledge-aware graph net-
+works for commonsense reasoning. In Proceedings
+of the 2019 Conference on Empirical Methods in Nat-
+ural Language Processing and the 9th International
+Joint Conference on Natural Language Processing
+(EMNLP-IJCNLP), pages 2829–2839, Hong Kong,
+China. Association for Computational Linguistics.","390","0.119047299068","0.1318795548112","0.48849399939524","0.23483314732328","8","0"
+"Matthew E. Peters, Mark Neumann, Robert Logan, Roy
+Schwartz, Vidur Joshi, Sameer Singh, and Noah A.
+Smith. 2019. Knowledge enhanced contextual word","147","0.119047299068","0.081618831913908","0.48863960348477","0.11948672439392","3","0"
+"representations. In Proceedings of the 2019 Confer-
+ence on Empirical Methods in Natural Language Pro-
+cessing and the 9th International Joint Conference
+on Natural Language Processing (EMNLP-IJCNLP),
+pages 43–54, Hong Kong, China. Association for
+Computational Linguistics.","274","0.53261176328291","0.83516620746178","0.88373280500474","0.91235769304779","6","0"
+"Alec Radford, Jeffrey Wu, Rewon Child, David Luan,
+Dario Amodei, Ilya Sutskever, et al. 2019. Language
+models are unsupervised multitask learners. OpenAI
+blog, 1(8):9.","167","0.5142858102796","0.77351563553433","0.88304975659022","0.82440066802076","4","0"
+"Nils Reimers and Iryna Gurevych. 2019. Sentence-
+BERT: Sentence embeddings using Siamese BERT-
+networks. In Proceedings of the 2019 Conference on
+Empirical Methods in Natural Language Processing
+and the 9th International Joint Conference on Natu-
+ral Language Processing (EMNLP-IJCNLP), pages
+3982–3992, Hong Kong, China. Association for Com-
+putational Linguistics.","366","0.5142858102796","0.65979650358123","0.88373748122921","0.76274890828968","8","0"
+"Melissa Roemmele, Cosmin Adrian Bejan, and An-
+drew S Gordon. 2011. Choice of plausible alter-
+natives: An evaluation of commonsense causal rea-
+soning. In AAAI spring symposium: logical formal-
+izations of commonsense reasoning, pages 90–95.","242","0.5142858102796","0.58512879164736","0.88373258956182","0.64903096414021","5","0"
+"Swarnadeep Saha, Prateek Yadav, Lisa Bauer, and Mohit
+Bansal. 2021. ExplaGraphs: An explanation graph
+generation task for structured commonsense reason-
+ing. In Proceedings of the 2021 Conference on Em-
+pirical Methods in Natural Language Processing,
+pages 7716–7740, Online and Punta Cana, Domini-
+can Republic. Association for Computational Lin-
+guistics.","357","0.5142858102796","0.47140965969426","0.8837373640765","0.57436206440271","8","0"
+"Yiheng Shu, Zhiwei Yu, Yuhan Li, Börje Karlsson,
+Tingting Ma, Yuzhong Qu, and Chin-Yew Lin. 2022.
+TIARA: Multi-grained retrieval for robust question
+answering over large knowledge base. In Proceed-
+ings of the 2022 Conference on Empirical Methods
+in Natural Language Processing, pages 8108–8121,
+Abu Dhabi, United Arab Emirates. Association for
+Computational Linguistics.","371","0.5142858102796","0.35769052774115","0.88388752038853","0.46064412025324","8","0"
+"Robyn Speer, Joshua Chin, and Catherine Havasi. 2017.
+Conceptnet 5.5: An open multilingual graph of gen-
+eral knowledge. In Thirty-first AAAI conference on
+artificial intelligence.","180","0.5142858102796","0.2960399558137","0.88388087142771","0.34692498830013","4","0"
+"Yueqing Sun, Qi Shi, Le Qi, and Yu Zhang. 2022.
+JointLK: Joint reasoning with language models and
+knowledge graphs for commonsense question answer-
+ing. In Proceedings of the 2022 Conference of the
+North American Chapter of the Association for Com-
+putational Linguistics: Human Language Technolo-
+gies, pages 5049–5060, Seattle, United States. Asso-
+ciation for Computational Linguistics.","389","0.5142858102796","0.1823208238606","0.88388622698043","0.28527322856905","8","0"
+"Peifeng Wang, Nanyun Peng, Filip Ilievski, Pedro
+Szekely, and Xiang Ren. 2020. Connecting the dots:
+A knowledgeable path generator for commonsense
+question answering. In Findings of the Association
+for Computational Linguistics: EMNLP 2020, pages
+4129–4140, Online. Association for Computational
+Linguistics.","308","0.5142858102796","0.081618831913908","0.88328374876125","0.17155528441958","7","0"
+"Michihiro Yasunaga, Antoine Bosselut, Hongyu Ren,
+Xikun Zhang, Christopher D Manning, Percy Liang,
+and Jure Leskovec. 2022.
+Deep bidirectional
+language-knowledge graph pretraining. In Advances
+in Neural Information Processing Systems.","234","0.119047299068","0.8481833474682","0.48781124537861","0.91208551996104","6","0"
+"Michihiro Yasunaga, Hongyu Ren, Antoine Bosselut,
+Percy Liang, and Jure Leskovec. 2021. QA-GNN:
+Reasoning with language models and knowledge
+graphs for question answering. In Proceedings of
+the 2021 Conference of the North American Chapter
+of the Association for Computational Linguistics: Hu-
+man Language Technologies, pages 535–546, Online.
+Association for Computational Linguistics.","386","0.119047299068","0.73339638004965","0.48865065397563","0.83634997256174","8","0"
+"Donghan Yu, Chenguang Zhu, Yuwei Fang, Wenhao
+Yu, Shuohang Wang, Yichong Xu, Xiang Ren, Yim-
+ing Yang, and Michael Zeng. 2022. KG-FiD: Infus-
+ing knowledge graph in fusion-in-decoder for open-
+domain question answering. In Proceedings of the
+60th Annual Meeting of the Association for Compu-
+tational Linguistics (Volume 1: Long Papers), pages
+4961–4974, Dublin, Ireland. Association for Compu-
+tational Linguistics.","416","0.119047299068","0.60559346042832","0.48849585737843","0.72156300514319","9","0"
+"Tianyi Zhang, Felix Wu, Arzoo Katiyar, Kilian Q Wein-
+berger, and Yoav Artzi. 2021. Revisiting few-sample
+BERT fine-tuning. In International Conference on
+Learning Representations.","180","0.119047299068","0.54287505303543","0.48848417057768","0.59376008552186","4","0"
+"Xikun Zhang, Antoine Bosselut, Michihiro Yasunaga,
+Hongyu Ren, Percy Liang, Christopher D Manning,
+and Jure Leskovec. 2022. GreaseLM: Graph REA-
+Soning enhanced language models. In International
+Conference on Learning Representations.","234","0.119047299068","0.46713950563613","0.48848596606616","0.53104167812897","5","0"
+"A Appendix A","12","0.5142858102796","0.89984007791992","0.65159640637284","0.91404050790483","1","0"
+"A.1 SentenceTransformer","23","0.5142858102796","0.87525923588592","0.72877473037717","0.88821710449109","1","0"
+"We use the model with id ALL-MPNET-BASE-V2 to
+prune the different paths and to calculate similarity.","100","0.51342402515808","0.83831573530984","0.88416374288565","0.86736715532908","2","1"
+"A.2 Grid search","15","0.5142858102796","0.81181745608096","0.65240978420094","0.82477532468612","1","0"
+"Based on the following values, we do a grid search
+checking every possible combination.","87","0.5142858102796","0.77487395550488","0.88095942063009","0.80392537552412","2","0"
+"Hyperparameter","14","0.55311989732494","0.74669374633266","0.68525122968169","0.75965161493782","1","0"
+"Value","5","0.75166509215893","0.74669374633266","0.79579439150915","0.75965161493782","1","0"
+"lr","2","0.55311989732494","0.70750410908789","0.56431715725143","0.72046197769305","1","0"
+"Weight decay
+Batch size
+Dropout","31","0.55311821743191","0.63841669861858","0.6529222723577","0.68356167005191","3","0"
+"4 ∗ 10−5, 3 ∗ 10−5
+5 ∗ 10−5, 6 ∗ 10−6
+4 ∗ 10−6, 1 ∗ 10−6","56","0.70533164448088","0.69143075033555","0.84128121095089","0.73874959982896","3","0"
+"0.01 | 0.1
+4 | 8 | 16
+0.2 | 0.3","31","0.73931252057869","0.63841669861858","0.808136981837","0.68384674316122","3","0"
+"Table 5: The values used for the grid search","44","0.55086884067223","0.61205748779532","0.84385104657335","0.6238911002625","1","0"
+"A.3 Hyperparameters","19","0.5142858102796","0.56965992956324","0.69884817479623","0.58261779816841","1","0"
+"Based on the grid search, we select the following
+hyperparameters:","66","0.5142858102796","0.53271642898716","0.88096070345856","0.56176903681003","2","0"
+"Hyperparameter With graphs w/o graphs
+Learning rate
+Dropout
+Weight decay
+Batch size","83","0.52432653088651","0.43791425768212","0.88060464910395","0.5174940884201","5","0"
+"3 ∗ 10−5
+0.3
+0.01
+16","20","0.69360095149141","0.43819933079143","0.75657764487397","0.5013266585896","4","0"
+"4 ∗ 10−5
+0.3
+0.1
+8","18","0.80567165482902","0.43819933079143","0.86864666831856","0.5013266585896","4","0"
+"Table 6: The hyperparameters used for ExplaGraphs","49","0.52189068600112","0.41155504685885","0.87283001397671","0.42338865932604","1","0"
+"Hyperparameter With graphs w/o graphs
+Learning rate
+Dropout
+Weight decay
+Batch size","83","0.52432653088651","0.30085359655062","0.88060464910394","0.3804334272886","5","0"
+"4 ∗ 10−5
+0.2
+0.01
+8","19","0.69360095149141","0.30113866965993","0.75657764487397","0.3642659974581","4","0"
+"4 ∗ 10−5
+0.3
+0.1
+16","19","0.80567165482902","0.30113866965993","0.86864666831856","0.3642659974581","4","0"
+"Table 7: The hyperparameters used for COPA-SSE","46","0.52682789159986","0.27449438572735","0.8678929192509","0.28632799819454","1","0"
+"A.4 Seeds","9","0.5142858102796","0.23209682749528","0.6033690844247","0.24505469610044","1","0"
+"Seeds used for both tasks during fine-tuning:
+[9, 119, 7230, 4180, 6050, 257, 981, 1088, 416, 88]","97","0.5142858102796","0.19543958783214","0.88350290296266","0.22420593474207","2","0"
+"A.5 Outliers","12","0.5142858102796","0.16865504769032","0.6237294048475","0.18161291629548","1","0"
+"(a) Manually created graphs","27","0.1483899905254","0.52787568162111","0.31778390931265","0.5385260041098","1","0"
+"(b) No graphs appended
+to original context","42","0.42584112243732","0.51604159403247","0.57365667201097","0.5385260041098","2","0"
+"(c) Approach 2","14","0.72083033752411","0.52787568162111","0.81200421182779","0.5385260041098","1","0"
+"(d) Approach 1","14","0.18707792687762","0.28042411431422","0.27909530637889","0.29107443680291","1","0"
+"(e) Approach 3","14","0.45416411882891","0.28042411431422","0.5453379931326","0.29107443680291","1","0"
+"(f) Approach 3-G","16","0.71372103024479","0.28042411431422","0.81911399216498","0.29107443680291","1","0"
+"Figure 7: Outliers from the different runs for all graph configurations for ExplaGraphs. Circular dots mark outliers
+that were removed, if any.","143","0.119047299068","0.24064435781397","0.88095607766213","0.26667816270534","2","1"
+"(a) Manually created graphs","27","0.1483899905254","0.52787568162111","0.31778390931265","0.5385260041098","1","0"
+"(b) No graphs appended
+to original context","42","0.42584112243732","0.51604159403247","0.57365667201097","0.5385260041098","2","0"
+"(c) Approach 2","14","0.72083033752411","0.52787568162111","0.81200421182779","0.5385260041098","1","0"
+"(d) Approach 1","14","0.18707792687762","0.28042411431422","0.27909530637889","0.29107443680291","1","0"
+"(e) Approach 3","14","0.45416411882891","0.28042411431422","0.5453379931326","0.29107443680291","1","0"
+"(f) Approach 3-G","16","0.71372103024479","0.28042411431422","0.81911399216498","0.29107443680291","1","0"
+"Figure 8: Outliers from the different runs for all graph configurations for COPA-SSE. Circular dots mark outliers
+that were removed, if any.","140","0.119047299068","0.24064435781397","0.88094670544487","0.26667816270534","2","1"
+"Context aware Named Entity Recognition and
+Relation Extraction with Domain-specific language
+model","98","0.14999932804279","0.82895554169785","0.82270815453672","0.90147261637506","3","0"
+"Youngrok Jang1, Hosung Song1, Junho Lee2, Gyeonghun Kim1, Yireun Kim1,
+Stanley Jungkyu Choi1, Honglak Lee1 and Kyunghoon Bae1","125","0.14941808505634","0.78642578009004","0.78894016221047","0.81719369513832","2","0"
+"1LG AI Research, 30, Magokjungang 10-ro, Gangseo-gu, Seoul 07796, Korea
+2LG Display, 30, Magokjungang 10-ro, Gangseo-gu, Seoul 07796, Korea","139","0.14999932804279","0.74133302735512","0.59330116718967","0.7691715563791","2","0"
+"Abstract
+ChEMU 2022 tasks 1a and 1b aim to NER (Named Entity Recognition) and EE (Event Extraction) bench-
+marks. EE is RE (relation extraction) between trigger word and entity. We develop context-aware NER
+and RE models based on the domain-specific language model and achieve the state-of-the-art perfor-
+mance in ChEMU 2022, the public exact match f1 score of tasks 1a is 96.33, and task 1b is 92.82. For
+the domain-specific language model, we post-train the Bio-linkBert model with various corpora. We
+then select the best performing model from domain-specific benchmark datasets consisting of BLURB
+(Biomedical Language Understanding & Reasoning Benchmark) and ChEMU 2020. For the NER model,
+we choose a sequence tagging model that outperforms the span-based model in CHEMU 2022 task 1a.
+For the RE model, we train the model to classify the relation types or no relation between every pair of
+trigger words and entities in the snippet. Furthermore, we train both models using inputs that contain
+multiple sentences rather than a single sentence so that the model can utilize contextual information.
+For the ensemble, we train the best-performing model with 10-fold cross-validation and then predict the
+results with soft-voting. Finally, we apply rule-based post-processing to the prediction results.","1304","0.21936211102077","0.5388661226526","0.85254867907996","0.7180005244153","14","1"
+"Keywords
+Language Model, Named Entity Recognition, Relation Extraction, Event Extraction","88","0.2200038301561","0.50385204717956","0.72875796504479","0.52678195666892","2","1"
+"1. Introduction","15","0.14999932804279","0.4412187376023","0.31908549849146","0.45825920607205","1","0"
+"Named Entity Recognition (NER)[1] and Relation Extraction (RE)[2] are well-known tasks in
+the field of information extraction research. Previous research has focused on diverse domain
+datasets, such as ACE051 from Newswire and online forums, and SciERC[3] from scientific
+papers. Both NER and RE models are based on either a general domain language model[4]
+or a domain-specific language model[5],[6],[7], depending on the dataset. And most of the
+works employ either a pipeline approach or a joint approach. A pipeline approach is training
+one model to extract entities and another model to classify relations between them. A joint
+approach is training the model for both tasks simultaneously.","694","0.14932233115395","0.30368694247467","0.85000660651899","0.42930204658566","8","1"
+"CLEF 2022: Conference and Labs of the Evaluation Forum, September 5–8, 2022, Bologna, Italy
+$ jyrok3357@lgresearch.ai (Y. Jang); hosung.song@lgresearch.ai (H. Song); junho1126@lgdisplay.com (J. Lee);
+ghkayne.kim@lgresearch.ai (G. Kim); yireun.kim@lgresearch.ai (Y. Kim); stanleyjk.choi@lgresearch.ai (S. J. Choi);
+honglak@lgresearch.ai (H. Lee); k.bae@lgresearch.ai (K. Bae)","374","0.14999932804279","0.23407452279989","0.85107379273883","0.28149076767749","4","0"
+"© 2022 Copyright for this paper by its authors. Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0).
+CEUR Workshop Proceedings (CEUR-WS.org)","175","0.20909796464161","0.20816496216845","0.77315218083712","0.22910784069178","2","0"
+"1https://catalog.ldc.upenn.edu/LDC2006T06","41","0.17748069802915","0.19496371259903","0.44521206566366","0.20658827162693","1","0"
+"ChEMU (Cheminformatics Elsevier Melbourne University) 2022 introduces 5 tasks to extract
+information from the snippet of chemical patents to support the drug discovery process. Among
+these tasks, we focus on NER task 1a and EE (event extraction) task 1b. Task 1a aims to extract
+chemical entities from the snippet. Task 1b aims to extract trigger words and relations between
+trigger words and entities from the snippet. Task 1b includes both NER and RE tasks. The
+extraction of trigger words is the NER task and the relation between trigger word and entity
+is the RE task. We develop context-aware NER and RE models based on the domain-specific
+language model and achieve state-of-the-art performance in ChEMU 2022, the exact match
+f1 score of task 1a is 96.33, and task 1b is 92.82.2 In this paper, we explain our contributions
+to improving the performance of ChEMU 2022 : (1) domain-specific language model, (2) best
+performing NER and RE models, (3) context-aware model with input consisting of multiple
+sentences, (4) post-processing to the model prediction, (5) cross-validation and ensemble. Finally,
+we experiment and analyze our contributions in section 4.","1164","0.14932233115395","0.69385786741736","0.85202207665352","0.89994072859875","13","1"
+"For the domain-specific language model, we post-train the Bio-linkBert[7] model with various
+chemical corpora. We then select the best performing model from domain-specific benchmark
+datasets consisting of BLURB (Biomedical Language Understanding & Reasoning Benchmark)[8]
+and ChEMU 2020[9]. Among the pipeline approach and the joint approach, we choose the
+pipeline approach because PURE[10] reports it gets higher performance than the joint ap-
+proach. For the NER model, we experiment with two popular approaches, the sequence tagging
+approach[4],[11] and the span-based approach[10], [12]. And finally, we choose the sequence
+tagging approach that shows higher performance in ChEMU 2022 task 1a. The NER model is
+trained to predict both entities in task 1a and trigger words in task 1b. For the RE model, we
+train the model to classify the relation types or no relation between every pair of trigger words
+and entities in the snippet. In task 1b, the RE model predicts the relation between entities and
+trigger words predicted by the NER model. Furthermore, we train both models using inputs that
+contain multiple sentences rather than a single sentence so that the model can utilize contextual
+information. For the ensemble, we train the best-performing model with 10-fold cross-validation
+and then predict the results with soft-voting. Finally, we apply rule-based post-processing to
+the prediction results.","1413","0.14999932804279","0.43635629357755","0.8530965489924","0.69072099680481","16","1"
+"2. Related Work","15","0.14999932804279","0.39159586525556","0.33115963922617","0.40863633372531","1","0"
+"Named Entity Recognition (NER)[1] and Relation Extraction (RE)[2] are well-known tasks in
+the field of information extraction research. These tasks have lots of applications in various
+domains such as news, social media, biomedical and chemical domains. There are two areas of
+study. The first is to improve the language model, and the second is to improve the NER and RE
+models based on that model.","399","0.14999932804279","0.3023459121738","0.8500028421082","0.37967917423891","5","1"
+"Recently the pre-trained language model such as BERT[4] and Roberta[13] have improved all
+NLP task performance. To improve the language model for NER and RE tasks, LUKE[14] and
+KeBioLM[15] use additional information such as named entity labels to pre-train the model.
+However, it is not easy to prepare a lot of label data in the chemical domain. Others approach","362","0.14999932804279","0.23797051871385","0.85282688103334","0.29921022936488","4","1"
+"2ChEMU 2022 website shows public and private exact match f1 score and the score mentioned above is the","102","0.17748069802915","0.20797966480181","0.84999333988268","0.21960422382972","1","1"
+"public score. The meaning of public and private scores is explained in section 4","80","0.14999932804279","0.1949625247954","0.63631019963849","0.20561284728409","1","1"
+"such as BioBert[5], PubmedBert[6] and Bio-linkBert[7] are pre-trained using domain-specific
+corpora. Similarly, we train a domain-specific language model with a chemical domain corpus
+and ultimately improve the performance of the ChEMU 2022 task.","246","0.14999932804279","0.85479575716543","0.85000459412844","0.89994072859875","3","1"
+"For NER tasks, there are the sequence tagging approach such as BERT[4] and the span-based
+approach such as PURE[10] and PL-Marker[12]. For the sequence tagging approach, BERT uses
+a BIO scheme to encode each token into a tag and trains a model to classify each token into its
+tag. For the span-based approach, PURE and PL-Marker generate entity span candidates whose
+length is shorter than the maximum span length and then train a model to classify them as
+entity type or no-entity. We experiment with both approaches and then select the model with
+the best performance in the ChEMU 2022 task.","593","0.14999932804279","0.7421385216596","0.85000683479932","0.85165888655288","7","1"
+"For NER and RE tasks, there are the pipeline approach [10],[12] and joint approach[16]. In a
+pipeline approach, the NER model predicts entities and then the RE model predicts the relation
+between them. On the other hand, in the joint approach, a single model learns the NER and RE
+tasks simultaneously. Because PURE[10] reports the pipeline approach performs better than
+the joint approach, we adopt the pipeline approach.","422","0.14999932804279","0.66166957678557","0.85000794432583","0.73900283885068","5","1"
+"3. Method","9","0.14999932804279","0.61690796065994","0.26599301937253","0.6339484291297","1","0"
+"3.1. Domain-specific language model
+We use transformer encoder-based models and these models are published in huggingface3,
+such as BERT, Roberta, BioBert, PubmedBert, Bio-megatron[17], and Bio-linkBert. Most of
+the publicly available pre-trained language models (PLM) are trained using general domain
+or biomedical domain knowledge. However, ChEMU 2022 data is composed of text based
+on chemical patents. Therefore, when fine-tuning publicly available pre-trained models, the
+gap between the chemical domain and other domains reduces the utilization of pre-trained
+knowledge. For example, if a word such as chemical compound is split into several tokens
+because the tokenizer is not trained with chemical domain texts, the language model may
+not capture its original meaning. And the understanding of the context is lowered due to a
+homonym problem in the different domains.","875","0.14912074399102","0.42228438394565","0.85201486712046","0.60242398413094","11","1"
+"To overcome this problem, the one way is to learn a model from scratch using only the
+chemical domain texts, as PubmedBert and Bio-linkBert did in the biomedical domain, but
+it was difficult due to the lack of time. We try to solve the problems mentioned above by
+applying domain transfer to the set using the post-training method. In this paper, we post-train
+Bio-linkBert with various chemical corpora and then select the best performing model from
+domain-specific benchmark datasets consisting of BLURB (Biomedical Language Understanding
+& Reasoning Benchmark) and ChEMU 2020. Since we believe that the Pubmed dataset used
+by the pre-trained Bio-linkBERT has some chemical information, we want to put additional
+data information into the model without losing the already learned information. The same
+methodology as Mix-Review[18], a rehearsal-based continual learning approach, is applied for
+domain transfer.","913","0.14999932804279","0.2452529427835","0.85046875463818","0.41914870113673","11","1"
+"3https://huggingface.co/","24","0.17748069802915","0.19501241254796","0.32532888945632","0.20663697157586","1","0"
+"3.2. Named Entity Recognition","29","0.14999932804279","0.88364575894713","0.43277440380597","0.89784618893205","1","0"
+"Using the domain-specific language model mentioned above, we experiment with the sequence
+tagging approach and the span-based approach. And then we compare which is better for the
+entity and trigger word recognition of ChEMU 2022 tasks 1a and 1b. In the case of the sequence
+tagging approach, a bio scheme is used, each token is encoded with the BEGIN and IN tag
+of a specific entity or OUT tag. And then the model is trained to classify each token into its
+corresponding tag. To classify tags, the output representation of each token is simply fed into a
+linear layer. We also experiment with CRF or Bi-LSTM+CRF layers in appendix A.1, but there
+is no performance improvement. In the case of the span-based approach, we consider token
+sequences shorter than the maximum span length4 as entity span candidates and then train the
+model to classify them to corresponding entity type or no entity. However, there are chemical
+entities much longer than the maximum sequence length in ChEMU 2022 task 1a. Therefore,
+we use several heuristic approaches to add long entity span candidates. One simple way we
+used is to add a space-split sequence of tokens. A span representation for classifying an entity
+is a concatenation of the first token, last token representation and width embedding to capture
+entity length information.5 After experiments, we finally decide to go with the sequence tagging
+approach that shows higher performance.","1430","0.14932233115395","0.62114409245863","0.85202015241081","0.8755087956859","16","1"
+"According to the error analysis part of the ChEMU2020[9], in some cases, contextual informa-
+tion from other sentences is necessary to extract trigger words. So we train the context-aware
+model with input including multiple sentences rather than a single sentence. It goes through
+several processing steps to generate the input data. First, we split the snippet into sentences
+with spacy6 library. Second, by sliding the sentences from left to right, we generate inputs that
+contain as many sentences as possible without exceeding the maximum sequence length of the
+model.","572","0.14932233115395","0.50848685695281","0.85309892290299","0.61800840964972","7","1"
+"3.3. Relation Extraction","24","0.14999932804279","0.47103959899749","0.3677040028491","0.48524002898241","1","0"
+"In this paper, we use the PURE[10] approach to extract the relation between entity and trigger
+word extracted from the NER model. For every entity and trigger word pair in the snippet, we
+generate input data to train the model to classify as a specific relation type or no-relation. Note
+that this input includes relations that occur in a single sentence as well as relations that occur
+in cross sentences. The pre-processing step to generate this input is as follows. First, we split
+the snippet into sentences as we did in the pre-processing step. Second, we add the sentences
+in which the entity or the trigger word occurs to the input. Third, if there are intermediate
+sentences between added sentences, we add them as well. If the generated input is longer than
+the maximum sequence length, we skip it. Since this input consists of a trigger word and an
+entity that is far from it, there doesn’t seem to be any relation between them. So skipping
+this input doesn’t affect the performance. However, if the generated input is shorter than the
+maximum sequence length, we add as many left and right sentences as possible to the input
+to train a context-aware RE model. Finally, in order to include information about the entity","1228","0.14932233115395","0.25681977455487","0.85046875463819","0.46290263573626","13","1"
+"4The maximum span length used in the PURE paper is 8. We use the same value
+5Since entity span candidates can be too long, so 9 width embeddings are used, embeddings for 1 to 8 tokens","183","0.17748069802915","0.22098373896827","0.85000133811946","0.24562543800259","2","1"
+"and embeddings for tokens longer than 8.
+6https://spacy.io/usage/spacy-101","74","0.14999932804279","0.19495064675908","0.4057320288404","0.21861692145055","2","0"
+"and trigger span, special tokens are inserted before and after the entity and trigger span. Each
+special token indicates the type of entity or trigger and whether it is inserted before or after the
+span. After input is fed to the model, output representations of special tokens before entity and
+before trigger are concatenated. And then, this concatenated representation is fed to the linear
+layer to classify relations.","421","0.14999932804279","0.82260746653363","0.85035000137415","0.89994072859875","5","1"
+"3.4. Ensemble","13","0.14999932804279","0.7846375749801","0.27915604055934","0.79883800496502","1","0"
+"Ensemble methods combine predictions from multiple models to improve performance. We train
+NER and RE models using 10-fold cross-validation on the merged training and development
+datasets. We apply the soft voting ensemble method to output results from 10 models.","263","0.14999932804279","0.73135445248192","0.85000143855287","0.77649942391524","3","1"
+"3.5. Post-processing","20","0.14999932804279","0.69338337312475","0.33402404531679","0.70758380310967","1","0"
+"We apply three post-processing methods to correct the results mispredicted by NER & RE
+models. The first method is to correct the entity misclassification of STARTING_MATERIAL as
+REAGENT_CATALYST. According to ChEMU 2020[9], misclassifying STARTING_MATERIAL
+as REAGENT_CATALYST is one of the most common errors in the NER task. We design the rules
+according to the definition of the entities or trigger words. By definition, the difference between
+STARTING_MATERIAL and REAGENT_CATALYST is that STARTING_MATERIAL is consumed
+during the chemical reaction, while REAGENT_CATALYST is not consumed and only increases
+the reaction rate. In other words, unlike REACTION_CATALYST, the molecular structure of
+STARTING_MATERIAL is similar to REACTION_PRODUCT. Therefore, we measure similarity
+between STARTING_MATERIAL or REAGENT_CATALYST and REACTION_PRODUCT in the
+snippet and then correct the entity type if it appears to be misclassified. 7","935","0.14912074399102","0.51135065151029","0.8504750773201","0.68524640986352","11","1"
+"The second method is to correct mispredicted trigger word or entity spans. Sometimes the
+model predicts different spans for the same word in different sentences. For example, the model
+predicts ""taken up"" as a trigger word span, but sometimes only ""taken"" without ""up"" in other
+sentences. Sometimes this can happen because the labels for the same word are different from
+each other in the dataset. We apply post-processing that modifies all ""taken"" to ""taken up"". In
+the same manner, several spans of the entities are post-processed.","533","0.14999932804279","0.41478815522218","0.85034714249928","0.50821496870137","6","1"
+"The third method is to correct the relation misclassification of WORKUP as REAC-
+TION_STEP. If the RE model predicts that a trigger word is related to REACTION_PRODUCT,
+YIELD_PERCENT, YIELD_OTHER at one time, the trigger word should be REACTION_STEP
+rather than WORKUP. The rule should capture the sentence at the end of the snippet that
+describes the material synthesis in which the product is finally formed. Thus, we force the
+trigger word WORKUP to be replaced by REACTION_STEP in this case.","495","0.14945000302381","0.31822565893407","0.85309288717502","0.41165247241326","6","1"
+"4. Experiments","14","0.14999932804279","0.27346404280844","0.31855529670271","0.2905045112782","1","0"
+"We evaluate our domain-specific language model with the BLURB benchmark and ChEMU 2020
+dataset. We then evaluate NER and RE models with ChEMU 2022 task 1a and 1b datasets. Since","177","0.14912074399102","0.23249593177256","0.85000578184355","0.2615473517918","2","1"
+"7the details are described in appendix A.2","42","0.17748069802915","0.19498509306441","0.43224317325073","0.20660965209232","1","1"
+"Table 1
+Overall statistics of train and development datasets in ChEMU 2022 task1b.","82","0.14949704002849","0.86772945586716","0.67014064971543","0.89375142714606","2","1"
+"Feature","7","0.40423601825036","0.84443425103042","0.45636897674356","0.85626786349761","1","0"
+"# Patent snippets
+# Entities
+# Trigger Words
+# Relations","56","0.40423601825036","0.78112669303591","0.52338033013258","0.83556207057929","4","0"
+"Value","5","0.5568525346226","0.84443425103042","0.59524515317265","0.85626786349761","1","0"
+"1500
+26857
+11236
+23445","22","0.5568525346226","0.78112669303591","0.59576397234224","0.83556207057929","4","0"
+"the ChEMU 2022 test dataset may also consist of unseen data, we want to choose a domain-
+specific language model that generally performs well for the unseen data. This is why we use
+the BLURB benchmark dataset together rather than just ChEMU 2020. BLURB benchmark
+dataset is based on the biomedical domain, which has some relevance to the chemical domain.
+Furthermore, it also includes chemical domain data, such as BC5-chem and ChemProt. The
+train dataset of ChEMU 2020 is the same as that of ChEMU 2022, but the development and test
+datasets of ChEMU 2020 are the same as the development dataset of ChEMU 2022. The test data
+set of ChEMU 2020 is public, while that of ChEMU 2022 is not. In order to get the score of the
+ChEMU 2022 test data set, the model must be uploaded to the ChEMU website. For convenience,
+we use the ChEMU 2020 data set to evaluate domain-specific language models, but the ChEMU
+2022 data set to evaluate our NER and RE models.","952","0.14932233115395","0.57874544180356","0.85310441735934","0.75264120015679","11","1"
+"4.1. Dataset","12","0.14999932804279","0.5407743624464","0.25941400224434","0.55497479243132","1","0"
+"4.1.1. ChEMU 2022 dataset","25","0.14999932804279","0.51663443145779","0.37247843689314","0.52959230006295","1","0"
+"ChEMU 2022 includes five tasks: named entity recognition (task 1a), event extraction (task
+1b), anaphora resolution (task 1c), chemical reaction reference resolution (task 2a), and table
+semantic classification (task 2b). Among them, we focus on tasks 1a and 1b. Task 1a is to extract
+chemical entities and task 1b is to extract both the trigger words and the relations between
+trigger words and chemical entities. The dataset of task 1b is a superset of task 1a. Table 1
+shows the overall statistics of the train and development datasets in ChEMU 2022 task 1b.","561","0.14957767489366","0.41477865279312","0.85046875463818","0.50820546627232","6","1"
+"4.1.2. BLURB benchmark dataset","30","0.14999932804279","0.37757350900949","0.42626560200646","0.39053137761465","1","0"
+"The BLURB benchmark dataset consists of six tasks as follows : named entity recognition, PICO
+(patient population, interventions, comparator, and outcomes), relation extraction, sentence
+similarity, document classification, and question answer. Among them, we use only NER and
+RE datasets, which are the target tasks of ChEMU 2022. Table 2 summarizes the dataset we use.","370","0.14945000302381","0.30790483317298","0.85280588484837","0.36914454382402","4","1"
+"Table 2
+The NER and RE datasets in BLURB benchmark.","51","0.14949704002849","0.86772945586716","0.48328205168695","0.89375142714606","2","0"
+"Dataset","7","0.23044772508887","0.84210378030384","0.28401998837514","0.85393739277103","1","0"
+"Task","4","0.35775925486665","0.84210378030384","0.38907250216706","0.85393739277103","1","0"
+"Train","5","0.42538984403873","0.84210378030384","0.46145614437673","0.85393739277103","1","0"
+"Dev","3","0.50676077315397","0.84210378030384","0.53383978658639","0.85393739277103","1","0"
+"Test","4","0.57834108245587","0.84210378030384","0.60622342879605","0.85393739277103","1","0"
+"Evaluation Metrics","18","0.63969563328607","0.84210378030384","0.7695510506051","0.85393739277103","1","0"
+"BC5-chem","8","0.23044772508887","0.81429729727162","0.30289831170751","0.8261309097388","1","0"
+"BC5-disease","11","0.23044772508887","0.79299641473352","0.31513240244861","0.8048300272007","1","0"
+"NCBI-disease","12","0.23044772508887","0.77169553219542","0.32428705037663","0.7835291446626","1","0"
+"BC2GM","5","0.23044772508887","0.75039464965732","0.28669776473434","0.76222826212451","1","0"
+"JNLPBA","6","0.23044772508887","0.72909495492285","0.28663082032536","0.74092856739004","1","0"
+"ChemProt","8","0.23044772508887","0.70779407238475","0.30127490978974","0.71962768485194","1","0"
+"DDI","3","0.23044772508887","0.68649318984665","0.25913340433681","0.69832680231384","1","0"
+"GAD","3","0.23044772508887","0.66519230730856","0.2648571513046","0.67702591977574","1","0"
+"NER","3","0.35775925486665","0.81429729727162","0.38882146063339","0.8261309097388","1","0"
+"NER","3","0.35775925486665","0.79299641473352","0.38882146063339","0.8048300272007","1","0"
+"NER","3","0.35775925486665","0.77169553219542","0.38882146063339","0.7835291446626","1","0"
+"NER","3","0.35775925486665","0.75039464965732","0.38882146063339","0.76222826212451","1","0"
+"NER","3","0.35775925486665","0.72909495492285","0.38882146063339","0.74092856739004","1","0"
+"RE","2","0.35775925486665","0.70779407238475","0.37680493922147","0.71962768485194","1","0"
+"RE","2","0.35775925486665","0.68649318984665","0.37680493922147","0.69832680231384","1","0"
+"RE","2","0.35775925486665","0.66519230730856","0.37680493922147","0.67702591977574","1","0"
+"5203","4","0.43032699420101","0.81429729727162","0.46145614437673","0.8261309097388","1","0"
+"4182","4","0.43032699420101","0.79299641473352","0.46145614437673","0.8048300272007","1","0"
+"5134","4","0.43032699420101","0.77169553219542","0.46145614437673","0.7835291446626","1","0"
+"15197","5","0.42254470665708","0.75039464965732","0.46145614437673","0.76222826212451","1","0"
+"46750","5","0.42254470665708","0.72909495492285","0.46145614437673","0.74092856739004","1","0"
+"18035","5","0.42254470665708","0.70779407238475","0.46145614437673","0.71962768485194","1","0"
+"22233","5","0.42254470665708","0.68649318984665","0.46145614437673","0.69832680231384","1","0"
+"4261","4","0.43032699420101","0.66519230730856","0.46145614437673","0.67702591977574","1","0"
+"5547","4","0.50271063641067","0.81429729727162","0.53383978658639","0.8261309097388","1","0"
+"4244","4","0.50271063641067","0.79299641473352","0.53383978658639","0.8048300272007","1","0"
+"787","3","0.5104929239546","0.77169553219542","0.53383978658639","0.7835291446626","1","0"
+"3061","4","0.50271063641067","0.75039464965732","0.53383978658639","0.76222826212451","1","0"
+"4551","4","0.50271063641067","0.72909495492285","0.53383978658639","0.74092856739004","1","0"
+"5385","4","0.57509427862034","0.81429729727162","0.60622342879605","0.8261309097388","1","0"
+"4424","4","0.57509427862034","0.79299641473352","0.60622342879605","0.8048300272007","1","0"
+"960","3","0.58287656616427","0.77169553219542","0.60622342879605","0.7835291446626","1","0"
+"6325","4","0.57509427862034","0.75039464965732","0.60622342879605","0.76222826212451","1","0"
+"8662","4","0.57509427862034","0.72909495492285","0.60622342879605","0.74092856739004","1","0"
+"F1 entity-level","15","0.63969563328607","0.81429729727162","0.73755162311264","0.8261309097388","1","0"
+"F1 entity-level","15","0.63969563328607","0.79299641473352","0.73755162311264","0.8048300272007","1","0"
+"F1 entity-level","15","0.63969563328607","0.77169553219542","0.73755162311264","0.7835291446626","1","0"
+"F1 entity-level","15","0.63969563328607","0.75039464965732","0.73755162311264","0.76222826212451","1","0"
+"F1 entity-level","15","0.63969563328607","0.72909495492285","0.73755162311264","0.74092856739004","1","0"
+"11268","5","0.49492834886674","0.70779407238475","0.53383978658639","0.71962768485194","1","0"
+"15745","5","0.56731199107641","0.70779407238475","0.60622342879605","0.71962768485194","1","0"
+"Micro F1","8","0.63969563328607","0.70779407238475","0.70063178156015","0.71962768485194","1","0"
+"5559","4","0.50271063641067","0.68649318984665","0.53383978658639","0.69832680231384","1","0"
+"534","3","0.5104929239546","0.66519230730856","0.53383978658639","0.67702591977574","1","0"
+"5716","4","0.57509427862034","0.68649318984665","0.60622342879605","0.69832680231384","1","0"
+"535","3","0.58287656616427","0.66519230730856","0.60622342879605","0.67702591977574","1","0"
+"Micro F1","8","0.63969563328607","0.68649318984665","0.70063178156015","0.69832680231384","1","0"
+"Micro F1","8","0.63969563328607","0.66519230730856","0.70063178156015","0.67702591977574","1","0"
+"4.2. Implementation","19","0.14999932804279","0.6182821128651","0.337598900678","0.63248254285002","1","0"
+"4.2.1. Domain-specific language model","37","0.14999932804279","0.59414218187649","0.47539793238767","0.60710005048165","1","0"
+"We post-train Bio-LinkBert with different corpus combinations and then select the best-
+performing model. Based on the architecture and weight of Bio-LinkBert large8, we post-train
+Bio-LinkBert on a task of masked language modeling[13]. We experiment with three corpora:
+(1) Google patent: 23 GB of chemical domain patents we crawled using chemical keywords,
+(2) Journal: 22 GB of chemical journal abstracts and body text (3) Pubmed abstract9: used by
+training BioBert[5], 38 GB of biomedical domain data. For the Pubmed abstract corpus, we use
+12 GB, which is 30% of the total data. This is because Bio-LinkBert has already been trained
+with Pubmed abstract and the post-training aims to learn new information without losing what
+has been learned. The corpus used for our best-performing model is the combination of Journal
+and Pubmed abstract. We train our model for 15,000 steps (approx. 2 epochs) with sequence
+length 512, batch size 2k, weight reduction 0.01, warm-up 3000 steps, and learning rate 5e-5.
+The training time is about 13 hours using DeepSpeed10 with 16 Nvidia A100 40GB GPUs.","1093","0.14912074399102","0.39572271912008","0.85310438754796","0.58571202888738","12","1"
+"4.2.2. NER & RE models","22","0.14999932804279","0.35851757533645","0.34894769753862","0.37147544394161","1","0"
+"We train a NER model to predict both entities and trigger words and a RE model to predict
+relations between them. At inference time, the RE model predicts the relation using the results
+predicted by the NER model. Although the code for ChEMU 2022 task 1a and task 1b is published,
+we implement all codes for pre-processing, post-processing, and modeling for NER and RE. As
+we will discuss in the 4.4 section, we achieve higher performance than the other participants
+in tasks 1a and 1b even using publicly available domain-specific language models such as","555","0.14912074399102","0.25666179667177","0.85202207665352","0.35008861015097","6","1"
+"8https://huggingface.co/michiyasunaga/BioLinkBERT-large
+9https://github.com/EleutherAI/the-pile
+10https://github.com/microsoft/DeepSpeed","136","0.17281227531431","0.19497440283172","0.54123609485348","0.23263324187245","3","0"
+"Table 3
+The Exact match results of the ChEMU 2020 test set. ""GP"" indicates training with Google Patent corpus
+we crawl. ""PM"" refers PubMed abstract corpus and ""J"" refers to Journal data. ""p"", ""r"" and ""f1"" means
+precision, recall and f1 score, respectively. We train these models with the input data generated from
+each paragraph, but (doc) means model trained at the document level.","382","0.14939792634005","0.82512887859459","0.85000489616682","0.89375142714606","5","1"
+"Model","5","0.29384352804413","0.78905290667427","0.33782600474402","0.80088651914146","1","0"
+"Trigger","7","0.47523837682016","0.7978569071969","0.52445925352274","0.80969051966409","1","0"
+"Entity","6","0.62296795133686","0.7978569071969","0.66519313730102","0.80969051966409","1","0"
+"p","1","0.44691202064253","0.77797663780304","0.45566500211667","0.78981025027023","1","0"
+"r","1","0.49542998105081","0.77797663780304","0.50137129734778","0.78981025027023","1","0"
+"f1","2","0.54045009608988","0.77797663780304","0.55348751973874","0.78981025027023","1","0"
+"p","1","0.59114374979001","0.77797663780304","0.59989673126415","0.78981025027023","1","0"
+"r","1","0.63966171019829","0.77797663780304","0.64560302649527","0.78981025027023","1","0"
+"f1","2","0.68468182523737","0.77797663780304","0.69771924888623","0.78981025027023","1","0"
+"PubmedBert-base","15","0.29384352804413","0.75159076791505","0.41648568529556","0.76342438038224","1","0"
+"96.1","4","0.43777400735121","0.75159076791505","0.4648028124769","0.76342438038224","1","0"
+"94.9","4","0.48488613517091","0.75159076791505","0.5119149402966","0.76342438038224","1","0"
+"95.5","4","0.53345430388593","0.75159076791505","0.56048310901162","0.76342438038224","1","0"
+"95.6","4","0.5820057364987","0.75159076791505","0.60903454162439","0.76342438038224","1","0"
+"94.3","4","0.6291178643184","0.75159076791505","0.65614666944409","0.76342438038224","1","0"
+"95","4","0.67768603303342","0.75159076791505","0.70471483815911","0.76342438038224","1","0"
+"Bio-linkBert-large","18","0.29384352804413","0.72520371022343","0.4176906846572","0.73703732269061","1","0"
+"+GP","3","0.29384352804413","0.70532344082956","0.32401872039189","0.71715705329675","1","0"
+"+GP+PM","6","0.29384352804413","0.6854431714357","0.35702231401904","0.69727678390289","1","0"
+"+J","2","0.29384352804413","0.66556290204183","0.30801900664566","0.67739651450902","1","0"
+"+J+PM","5","0.29384352804413","0.64568263264797","0.34102260027281","0.65751624511516","1","0"
+"+J+PM (doc)","11","0.29384352804413","0.62580236325411","0.37949889933409","0.63763597572129","1","0"
+"96.3","4","0.43777400735121","0.72520371022343","0.4648028124769","0.73703732269061","1","0"
+"95.9","4","0.43777400735121","0.70532344082956","0.4648028124769","0.71715705329675","1","0"
+"96.3","4","0.43777400735121","0.6854431714357","0.4648028124769","0.69727678390289","1","0"
+"96","2","0.44351449042125","0.66556290204183","0.45907906550911","0.67739651450902","1","0"
+"96.6","4","0.43777400735121","0.64568263264797","0.4648028124769","0.65751624511516","1","0"
+"96.2","4","0.43777400735121","0.62580236325411","0.4648028124769","0.63763597572129","1","0"
+"95","2","0.49062661824095","0.72520371022343","0.50619119332881","0.73703732269061","1","0"
+"97.4","4","0.48488613517091","0.70532344082956","0.5119149402966","0.71715705329675","1","0"
+"97.2","4","0.48488613517091","0.6854431714357","0.5119149402966","0.69727678390289","1","0"
+"97.3","4","0.48488613517091","0.66556290204183","0.5119149402966","0.67739651450902","1","0"
+"96","2","0.49062661824095","0.64568263264797","0.50619119332881","0.65751624511516","1","0"
+"97.1","4","0.48488613517091","0.62580236325411","0.5119149402966","0.63763597572129","1","0"
+"95.6","4","0.53345430388593","0.72520371022343","0.56048310901162","0.73703732269061","1","0"
+"96.6","4","0.53345430388593","0.70532344082956","0.56048310901162","0.71715705329675","1","0"
+"96.8","4","0.531998602329","0.68543133782323","0.56192275314308","0.69726495029042","1","0"
+"96.6","4","0.53345430388593","0.66556290204183","0.56048310901162","0.67739651450902","1","0"
+"96.3","4","0.53345430388593","0.64568263264797","0.56048310901162","0.65751624511516","1","0"
+"96.7","4","0.53345430388593","0.62580236325411","0.56048310901162","0.63763597572129","1","0"
+"95.9","4","0.5820057364987","0.72520371022343","0.60903454162439","0.73703732269061","1","0"
+"95.8","4","0.5820057364987","0.70532344082956","0.60903454162439","0.71715705329675","1","0"
+"95.6","4","0.58200733777273","0.6854431714357","0.60903614289842","0.69727678390289","1","0"
+"95.8","4","0.5820057364987","0.66556290204183","0.60903454162439","0.67739651450902","1","0"
+"95.9","4","0.5820057364987","0.64568263264797","0.60903454162439","0.65751624511516","1","0"
+"96.1","4","0.5820057364987","0.62580236325411","0.60903454162439","0.63763597572129","1","0"
+"94.2","4","0.6291178643184","0.72520371022343","0.65614666944409","0.73703732269061","1","0"
+"96.1","4","0.6291178643184","0.70532344082956","0.65614666944409","0.71715705329675","1","0"
+"96","2","0.63484321256022","0.6854431714357","0.65040778764808","0.69727678390289","1","0"
+"96.1","4","0.6291178643184","0.66556290204183","0.65614666944409","0.67739651450902","1","0"
+"96.1","4","0.6291178643184","0.64568263264797","0.65614666944409","0.65751624511516","1","0"
+"96.3","4","0.6291178643184","0.62580236325411","0.65614666944409","0.63763597572129","1","0"
+"95.1","4","0.67768603303342","0.72520371022343","0.70471483815911","0.73703732269061","1","0"
+"95.9","4","0.67768603303342","0.70532344082956","0.70471483815911","0.71715705329675","1","0"
+"95.8","4","0.6776708982052","0.6854431714357","0.70469970333089","0.69727678390289","1","0"
+"96","2","0.68340978000121","0.66556290204183","0.69897435508907","0.67739651450902","1","0"
+"96","2","0.68340978000121","0.64568263264797","0.69897435508907","0.65751624511516","1","0"
+"96.2","4","0.67623085761899","0.62579052964164","0.70615500843306","0.63762414210883","1","0"
+"PubmedBert and Bio-linkBert on huggingface. We train the NER model for 20 epochs with a
+learning rate of 5e-5. At each epoch, we evaluate it on the development dataset and choose
+the best-performing model. In the same manner, we train the RE model for 10 epochs with a
+learning rate of 2e-5 and choose the best-performing model. The training time of the NER and
+RE model is about 20 minutes and 24 hours with 1 Nvidia A100 40GB GPU. Because the RE
+model is trained to classify all pairs of trigger words and entities in the snippet, it takes longer
+than the NER model only to classify each token.","596","0.14999932804279","0.48609200726936","0.85034312907878","0.59561237216263","7","1"
+"For the ensemble, We train a model with 10-fold cross-validation. And these 10 trained
+models predict entities or relations by soft-voting. Finally, post-processing is applied to the
+prediction results of the ensemble model.","224","0.14999932804279","0.43781016522349","0.85000860101197","0.48295513665681","3","1"
+"4.3. Evaluation Result","22","0.14999932804279","0.39983908586632","0.35155690335239","0.41403951585124","1","0"
+"We post-train Bio-linkBert with various corpora to obtain the domain-specific language model
+that achieves high performance in ChEMU 2022 tasks 1a and 1b. The performance verification
+of this model is performed using the CHEMU 2020 dataset and the BLURB dataset.","262","0.14912074399102","0.34655715117177","0.84999723038591","0.39170212260509","3","1"
+"Table 3 shows the entity and trigger extraction performance of post-trained models in
+ChEMU2020 task 1a. Table 4 shows the results of the NER and RE performance of the BLURB
+dataset. In Tables 3 and 4, the post-training with the journal and Pubmed abstract on Bio-
+linkBert large achieves the highest overall score, so we choose this model as our final model.
+We train these models with the input data generated from each paragraph. Training the model
+with input generated at the document level gives a slight performance improvement. However,
+in ChEMU 2022, the score eventually drops slightly, so it is not used.","614","0.14912074399102","0.23389991566594","0.85310441735934","0.34342146836285","7","1"
+"Table 5 and Table 6 show the evaluation results of task 1a and 1b in ChEMU2022, respectively.","93","0.1683252810461","0.21780636425186","0.85281946144982","0.23076423285702","1","1"
+"Table 4
+The evaluation results of NER and RE tasks in BLURB, the f1 score of the test dataset.","94","0.14949704002849","0.86772945586716","0.73974608248947","0.89375142714606","2","1"
+"Model","5","0.16243221631646","0.83262510731806","0.20641469301635","0.84445871978525","1","0"
+"BC5","3","0.30546334809399","0.84154670040029","0.33488541584072","0.85338031286748","1","0"
+"BC5","3","0.36699111000611","0.84154670040029","0.39641317775284","0.85338031286748","1","0"
+"NCBI","4","0.43005597403557","0.84154670040029","0.46863268971032","0.85338031286748","1","0"
+"-chem","5","0.29865978134512","0.82166643100643","0.34168830021704","0.83350004347361","1","0"
+"-disease","8","0.35406937286234","0.82166643100643","0.40933198247536","0.83350004347361","1","0"
+"-disease","8","0.42171362527634","0.82166643100643","0.47697623488936","0.83350004347361","1","0"
+"BC2GM JNLPBA","12","0.48935787769035","0.83262391951443","0.61417572823363","0.84445753198161","1","0"
+"Chem","4","0.62655306110107","0.84154670040029","0.66815901128216","0.85338031286748","1","0"
+"Prot","4","0.63274514678905","0.82166643100643","0.66196638130884","0.83350004347361","1","0"
+"DDI GAD","7","0.68546018989511","0.83262391951443","0.76791896565627","0.84445753198161","1","0"
+"Average","7","0.78302501696692","0.84154670040029","0.8375679741834","0.85338031286748","1","0"
+"score","5","0.7925130527688","0.82166643100643","0.82807727003944","0.83350004347361","1","0"
+"PubmedBert-base","15","0.16243221631646","0.79528056111844","0.28507437356789","0.80711417358562","1","0"
+"92.95","5","0.30276443364087","0.79528056111844","0.33757552631048","0.80711417358562","1","0"
+"85.35","5","0.36430308159576","0.79528056111844","0.39911417426538","0.80711417358562","1","0"
+"87.57","5","0.43193367076785","0.79528056111844","0.46674476343746","0.80711417358562","1","0"
+"84.36","5","0.50008307910952","0.79528056111844","0.53489417177914","0.80711417358562","1","0"
+"79.13","5","0.56866762610957","0.79528056111844","0.60347871877919","0.80711417358562","1","0"
+"77.02","5","0.62995523253079","0.79528056111844","0.66476632520041","0.80711417358562","1","0"
+"82.74","5","0.68238944086441","0.79528056111844","0.71720053353402","0.80711417358562","1","0"
+"81.89","5","0.73330066389372","0.79528056111844","0.76811175656334","0.80711417358562","1","0"
+"83.87","5","0.79289102869929","0.79528056111844","0.82770212136891","0.80711417358562","1","0"
+"Bio-linkBert-large","18","0.16243221631646","0.76889350342681","0.28627937292953","0.780727115894","1","0"
+"93.33","5","0.30276443364087","0.76889350342681","0.33757552631048","0.780727115894","1","0"
+"+GP","3","0.16243221631646","0.74901323403295","0.19260740866422","0.76084684650014","1","0"
+"+GP+PM","6","0.16243221631646","0.72913296463909","0.22561100229137","0.74096657710627","1","0"
+"+J","2","0.16243221631646","0.70925269524522","0.17660769491799","0.72108630771241","1","0"
+"+J+PM","5","0.16243221631646","0.68937242585136","0.20961128854515","0.70120603831855","1","0"
+"+J+PM (doc)","11","0.16243221631646","0.66949215645749","0.24808758760642","0.68132576892468","1","0"
+"94.1","4","0.30666394546395","0.74901323403295","0.33369275058964","0.76084684650014","1","0"
+"93.66","5","0.30276443364087","0.72913296463909","0.33757552631048","0.74096657710627","1","0"
+"94.13","5","0.30091083799784","0.70924086163275","0.33943734536585","0.72107447409994","1","0"
+"94.11","5","0.30276443364087","0.68937242585136","0.33757552631048","0.70120603831855","1","0"
+"93.92","5","0.30276443364087","0.66949215645749","0.33757552631048","0.68132576892468","1","0"
+"85.65","5","0.36430308159576","0.76889350342681","0.39911417426538","0.780727115894","1","0"
+"85.79","5","0.36430308159576","0.74901323403295","0.39911417426538","0.76084684650014","1","0"
+"85.93","5","0.36430308159576","0.72913296463909","0.39911417426538","0.74096657710627","1","0"
+"85.64","5","0.36429656159496","0.70925269524522","0.39910765426458","0.72108630771241","1","0"
+"86.65","5","0.36243859990996","0.68936059223889","0.40096510727797","0.70119420470608","1","0"
+"85.58","5","0.36430308159576","0.66949215645749","0.39911417426538","0.68132576892468","1","0"
+"87.62","5","0.43193367076785","0.76889350342681","0.46674476343746","0.780727115894","1","0"
+"88.46","5","0.43193367076785","0.74901323403295","0.46674476343746","0.76084684650014","1","0"
+"88.06","5","0.43193367076785","0.72913296463909","0.46674476343746","0.74096657710627","1","0"
+"88.61","5","0.43194388686928","0.70925269524522","0.4667549795389","0.72108630771241","1","0"
+"88.11","5","0.43193913411594","0.68937242585136","0.46675022678556","0.70120603831855","1","0"
+"84.61","5","0.50008307910952","0.76889350342681","0.53489417177914","0.780727115894","1","0"
+"84.9","4","0.50396585483036","0.74901323403295","0.53099465995605","0.76084684650014","1","0"
+"84.67","5","0.50008307910952","0.72913296463909","0.53489417177914","0.74096657710627","1","0"
+"84.51","5","0.50007655910872","0.70925269524522","0.53488765177833","0.72108630771241","1","0"
+"85.03","5","0.50007180635537","0.68937242585136","0.53488289902499","0.70120603831855","1","0"
+"89.32","5","0.43008117243094","0.66948032284503","0.46860767979895","0.68131393531221","1","0"
+"85.06","5","0.49821384467037","0.66948032284503","0.53674035203838","0.68131393531221","1","0"
+"79.08","5","0.56866762610957","0.76889350342681","0.60347871877919","0.780727115894","1","0"
+"77.68","5","0.62995523253079","0.76889350342681","0.66476632520041","0.780727115894","1","0"
+"82.03","5","0.68238944086441","0.76889350342681","0.71720053353402","0.780727115894","1","0"
+"84.15","5","0.73330066389372","0.76889350342681","0.76811175656334","0.780727115894","1","0"
+"84.26","5","0.79289102869929","0.76889350342681","0.82770212136891","0.780727115894","1","0"
+"79.97","5","0.56681606515297","0.74900140042048","0.60534257252098","0.76083501288767","1","0"
+"77.85","5","0.62994980479643","0.74901323403295","0.66476089746605","0.76084684650014","1","0"
+"82.74 85.62","11","0.68240074923229","0.74900140042048","0.7699737688064","0.76084684650014","1","0"
+"84.92","5","0.79289102869929","0.74901323403295","0.82770212136891","0.76084684650014","1","0"
+"79.38","5","0.56866762610957","0.72913296463909","0.60347871877919","0.74096657710627","1","0"
+"79.53","5","0.56867784221101","0.70925269524522","0.60348893488063","0.72108630771241","1","0"
+"79.79","5","0.56867308945766","0.68937242585136","0.60348418212728","0.70120603831855","1","0"
+"79.53","5","0.56867402683797","0.66949215645749","0.60348511950759","0.68132576892468","1","0"
+"79.91","5","0.62995523253079","0.72913296463909","0.66476632520041","0.74096657710627","1","0"
+"82.82","5","0.68238944086441","0.72913296463909","0.71720053353402","0.74096657710627","1","0"
+"85.42","5","0.73330066389372","0.72913296463909","0.76811175656334","0.74096657710627","1","0"
+"79.49","5","0.62994871252999","0.70925269524522","0.6647598051996","0.72108630771241","1","0"
+"83.39","5","0.68239965696584","0.70925269524522","0.71721074963546","0.72108630771241","1","0"
+"84.66","5","0.73331087999516","0.70925269524522","0.76812197266478","0.72108630771241","1","0"
+"79.92","5","0.62994395977664","0.68937242585136","0.66475505244626","0.70120603831855","1","0"
+"83.17","5","0.6823949042125","0.68937242585136","0.71720599688212","0.70120603831855","1","0"
+"85.04","5","0.73330612724182","0.68937242585136","0.76811721991144","0.70120603831855","1","0"
+"84.98","5","0.79289102869929","0.72913296463909","0.82770212136891","0.74096657710627","1","0"
+"84.99","5","0.79289102869929","0.70925269524522","0.82770212136891","0.72108630771241","1","0"
+"85.24","5","0.79289102869929","0.68937242585136","0.82770212136891","0.70120603831855","1","0"
+"79.97 84.79 84.33","17","0.62809184311143","0.66948032284503","0.76811631579301","0.68132576892468","1","0"
+"85.31","5","0.79103306701429","0.66948032284503","0.8295595743823","0.68131393531221","1","0"
+"Table 5
+ChEMU 2022 task 1a: named entity recognition evaluation results of the test dataset.","92","0.14949704002849","0.61655768758389","0.73581311492484","0.6425796588628","2","1"
+"Model","5","0.32103931621634","0.58616298043687","0.36502179291623","0.59799659290406","1","0"
+"Exact F1","8","0.53194820553827","0.59326248274715","0.58988859151049","0.60509609521434","1","0"
+"Relaxed F1","10","0.68064847398518","0.59326248274715","0.75512412897547","0.60509609521434","1","0"
+"public","6","0.49917181273896","0.57906229032296","0.54109574886271","0.59089590279015","1","0"
+"private","7","0.57456795335273","0.57906229032296","0.62266751120489","0.59089590279015","1","0"
+"public","6","0.6561397156949","0.57906229032296","0.69806365181865","0.59089590279015","1","0"
+"private","7","0.73153585630867","0.57906229032296","0.77963541416083","0.59089590279015","1","0"
+"Hokkaido University
+ChEMU Baseline
+Virginia Commonwealth University","67","0.22036332726332","0.52995492475264","0.46569785007291","0.57019010987184","3","0"
+"Ours (single)
+Ours (Ensemble)
+Ours (Ensemble) + post processing","63","0.22036332726332","0.48084874698595","0.45823354847163","0.52108274430151","3","0"
+"93.20
+93.20
+77.80","17","0.50628289801705","0.52995492475264","0.54109399068667","0.57019010987184","3","0"
+"95.52
+96.26
+96.33","17","0.50256855643433","0.48083691337348","0.54109506380234","0.52108274430151","3","0"
+"94.12
+93.67
+76.86","17","0.58785466035923","0.52995492475264","0.62266781795335","0.57019010987184","3","0"
+"95.86
+96.73
+96.80","17","0.5841403187765","0.48083691337348","0.62266682614451","0.52108274430151","3","0"
+"94.58
+95.28
+87.19","17","0.66325080097299","0.52995492475264","0.69806395856712","0.57019010987184","3","0"
+"97.10
+97.55
+97.59","17","0.65953645939027","0.48083691337348","0.69806296675828","0.52108274430151","3","0"
+"95.35
+95.72
+87.45","17","0.74482256331517","0.52995492475264","0.7796353422614","0.57019010987184","3","0"
+"97.33
+97.93
+97.93","17","0.74110822173244","0.48083691337348","0.7796348335898","0.52108274430151","3","0"
+"The public and private scores are calculated from 30% and 70% of the test data set, respectively. 11
+Both exact match and relaxed match require predicted entity or trigger word type to match the
+label. For span, exact match requires that predicted span exactly matches gold span. However,
+the relaxed match only requires that the predicted span overlap the gold span. Both metrics use
+f1 score which is the harmonic mean of the precision and recall.","449","0.14945000302381","0.37502999204172","0.85202229656697","0.45357362600815","5","1"
+"In Table 5, our single model achieves public and private exact match f1 scores improvement
+of +2.32 and +1.74 compared to Hokkaido University which achieves the highest score among
+other participants. Also, our final model with ensemble and post-processing achieves +3.13 and
++2.68.","282","0.14748956786432","0.31065459858176","0.85000578184355","0.37189312142917","4","1"
+"In Table 6, the evaluation method of task 1b in ChEMU 2022 is very similar to 1a, except
+that the relation type must match the label as well. To check whether the performance of the
+RE model is higher than that of other participants, we predicted the relation using the entity
+and trigger prediction results of the model12 that achieved the lowest performance among the","369","0.14999932804279","0.24627920512181","0.85047626834779","0.30751891577284","4","1"
+"11The Private score was published before the submission deadline, and the public score was published after that","111","0.17281227531431","0.22098730237917","0.85000029880056","0.23261186140707","1","1"
+"time.","5","0.14999932804279","0.20797016237276","0.18063664182665","0.21862048486144","1","0"
+"12EM F1 public score = 93.65, private score = 94.3","50","0.17281059542128","0.19495302236634","0.47312305014817","0.20657758139424","1","0"
+"Table 6
+ChEMU 2022 task 1b: Event extraction evaluation results of the test dataset.","84","0.14949704002849","0.86772945586716","0.67412384204974","0.89375142714606","2","1"
+"Model","5","0.32103931621634","0.83997286058749","0.36502179291623","0.85180647305467","1","0"
+"Exact F1","8","0.53194820553827","0.8470735507014","0.58988859151049","0.85890716316858","1","0"
+"Relaxed F1","10","0.68064847398518","0.8470735507014","0.75512412897547","0.85890716316858","1","0"
+"public","6","0.49917181273896","0.83287335827721","0.54109574886271","0.8447069707444","1","0"
+"private","7","0.57456795335273","0.83287335827721","0.62266751120489","0.8447069707444","1","0"
+"public","6","0.6561397156949","0.83287335827721","0.69806365181865","0.8447069707444","1","0"
+"private","7","0.73153585630867","0.83287335827721","0.77963541416083","0.8447069707444","1","0"
+"Hokkaido University
+ChEMU Baseline
+Virginia Commonwealth University","67","0.22036332726332","0.78376599270689","0.46569785007291","0.82399999002245","3","0"
+"Ours (single, worst ner)
+Ours (single)
+Ours (Ensemble)
+Ours (Ensemble) + post processing","88","0.22036332726332","0.72045843471237","0.45823354847163","0.77489381225576","4","0"
+"87.00
+88.42
+74.08","17","0.50628289801705","0.78376599270689","0.54109399068667","0.82399999002245","3","0"
+"90.46
+92.00
+92.23
+92.82","23","0.50256855643433","0.72044660109991","0.54109506380234","0.77489381225576","4","0"
+"88.68
+89.25
+74.73","17","0.58785466035923","0.78376599270689","0.62266781795335","0.82399999002245","3","0"
+"90.51
+91.84
+91.99
+92.15","23","0.5841403187765","0.72044660109991","0.62266682614451","0.77489381225576","4","0"
+"89.63
+90.36
+78.93","17","0.66325080097299","0.78376599270689","0.698063096782","0.82399999002245","3","0"
+"92.34
+93.75
+94.03
+94.24","23","0.65953645939027","0.72044660109991","0.69806296675828","0.77489381225576","4","0"
+"90.28
+91.04
+79.46","17","0.74482256331517","0.78376599270689","0.7796353422614","0.82399999002245","3","0"
+"92.07
+93.48
+93.63
+93.61","23","0.74110832622179","0.72045843471237","0.7796353422614","0.77489381225576","4","0"
+"Table 7
+Ablation over the pre-tained language models. PLMs publicly opened in huggingface and our best
+performing PLM are evaluated.","132","0.14948192099127","0.65502827162693","0.85000026655199","0.69525043533003","3","1"
+"Model","5","0.28756744770493","0.62463237667629","0.33154992440481","0.63646598914347","1","0"
+"PubmedBert base
+Bio-linkBert base
+Bio-linkBert large
+Ours","57","0.24833018633373","0.5542253163715","0.37078824646047","0.60865950611125","4","0"
+"task1a : NER","12","0.44689858149833","0.6317330667902","0.53533214576096","0.64356667925739","1","0"
+"task1b: EE","10","0.64577368447577","0.6317330667902","0.71733725767543","0.64356667925739","1","0"
+"public","6","0.42099631095492","0.61753287436601","0.46292024707867","0.6293664868332","1","0"
+"94.73
+95.2
+95.05
+95.52","22","0.4243947345433","0.5540947023958","0.46292124191132","0.60865950611125","4","0"
+"private","7","0.51312855381369","0.61753287436601","0.56122811166585","0.6293664868332","1","0"
+"public","6","0.61143641840088","0.61753287436601","0.65336035452462","0.6293664868332","1","0"
+"private","7","0.70356866125965","0.61753287436601","0.75166821911181","0.6293664868332","1","0"
+"95.55
+94.91
+95.34
+95.86","23","0.52270259913049","0.5540947023958","0.5612291064985","0.60865950611125","4","0"
+"92
+91.53
+91.02
+91.86","20","0.61854950409558","0.55410653600827","0.6533617226295","0.60864767249878","4","0"
+"91.84
+91.66
+91.28
+91.78","23","0.71314307984868","0.55410653600827","0.75166958721669","0.60864767249878","4","0"
+"NER models we submitted. Even in this case, the public and private exact match f1 scores are
++2.04 and +1.26 higher than the ChEMU Baseline, which has the highest performance among
+participants. Therefore, the proposed RE model also affects the performance improvement. The
+highest score is obtained by training an ensemble RE model using the prediction results of the
+best performing NER and applying post-processing to the prediction results. In this case, the
+public and private exact match f1 scores are +4.4 and +2.9 higher than the ChEMU Baseline.","553","0.14748956786432","0.43219422964995","0.85000578184355","0.52562104312915","6","1"
+"4.4. Analysis","13","0.14999932804279","0.39422315029279","0.26708588285098","0.40842358027771","1","0"
+"This section explains how PLM and data pre-processing methods affect the performance of
+ChEMU 2022 task 1a and 1b.","114","0.14945000302381","0.35703476701232","0.84999420019285","0.38608618703156","2","1"
+"Table 7 shows the exact match f1 score of the publicly available PLMs and our language
+model, which is post-trained on Bio-linkBert large with journal and pubmed abstract data
+and the best performing model is used by measuring the Blurb and CHEMU20 performance
+at every 500 steps within 2 epochs. . In task 1a, our language model outperforms all other
+PLMs. However, although it is not common, the performance of Bio-linkBert large is lower than
+Bio-linkBert base. Therefore, post-training Bio-linkBert base as we did for Bio-linkBert large
+may improve the performance. In task 1b, our model outperforms the Bio-linkBert large model,
+but PubmedBert base gets the highest score. As a result, we use our language model for task 1a
+and PubmedBert base for task 1b.","761","0.14999932804279","0.21219042867833","0.85202024404142","0.3538990842034","9","1"
+"Table 8 shows the comparison of the exact match f1 score in ChEMU 2022 according to the","87","0.1683252810461","0.19609687726425","0.85000310317567","0.20905474586941","1","1"
+"Table 8
+Ablation over pre-processing methods, how to generate input data. For each task 1a and 1b, the best
+performance PLM is used respectively.","145","0.14948192099127","0.85352926344297","0.84999941301077","0.89375142714606","3","1"
+"Pre-processing","14","0.22553571788549","0.82313336849232","0.32663851154758","0.83496698095951","1","0"
+"line
+snippet","12","0.22553571788549","0.78112669303591","0.27643020481256","0.80716049792728","2","0"
+"task1a : NER","12","0.42785195438754","0.83023405860623","0.51628551865017","0.84206767107342","1","0"
+"task1b : EE","11","0.65810724907438","0.83023405860623","0.73385484783529","0.84206767107342","1","0"
+"public","6","0.39358213668954","0.81603386618204","0.43550607281328","0.82786747864923","1","0"
+"93.89
+95.52","11","0.39698056027792","0.78111485942344","0.43550706764593","0.80716049792728","2","0"
+"private","7","0.50245048179332","0.81603386618204","0.55055003964548","0.82786747864923","1","0"
+"94.6
+95.86","10","0.51202452711011","0.78111485942344","0.55055103447812","0.80716049792728","2","0"
+"public","6","0.61749444862551","0.81603386618204","0.65941838474926","0.82786747864923","1","0"
+"91.89
+92","8","0.62460807591773","0.78111485942344","0.65941937958191","0.80716049792728","2","0"
+"private","7","0.7263627937293","0.81603386618204","0.77446235158145","0.82786747864923","1","0"
+"91.63
+91.84","11","0.73593683904609","0.78111485942344","0.7744633464141","0.80716049792728","2","0"
+"Table 9
+Ablation over post-processing methods. Similarity refers to post-processing using molecular simi-
+larity between REACTION_PRODUCT and STARTING_MATERIAL or REACTION_PRODUCT and
+REAGENT_CATALYST. Entity span and trigger span indicates post-processing of entities and trigger
+span mismatch ,respectively. Strict relation refers post-processing to forbid WORKUP relate to REAC-
+TION_PRODUCT, YIELD_PERCENT and YIELD_OTHER at once. Post-processed means applying all
+post-processing methods.","493","0.14948192099127","0.65889457245008","0.85279988173553","0.75591869365357","7","1"
+"public","6","0.47179123633407","0.63162378885603","0.51371517245782","0.64345740132321","1","0"
+"private","7","0.64127774376928","0.63162378885603","0.68937730162143","0.64345740132321","1","0"
+"Exact F1","8","0.41650259711462","0.61174351946216","0.47444298308684","0.62357713192935","1","0"
+"Relaxed F1","10","0.49452630578085","0.61174351946216","0.56900196077114","0.62357713192935","1","0"
+"Exact F1","8","0.58908528346515","0.61174351946216","0.64702566943737","0.62357713192935","1","0"
+"Relaxed F1","10","0.66710899213138","0.61174351946216","0.74158464712167","0.62357713192935","1","0"
+"Model","5","0.25841290426626","0.62281978833339","0.30239538096614","0.63465340080058","1","0"
+"NER base","8","0.25841290426626","0.58535764957417","0.32435314711159","0.59719126204136","1","0"
+"NER similarity","14","0.25841290426626","0.55897059188255","0.35921444808795","0.57080420434974","1","0"
+"NER entity span","15","0.25841290426626","0.53909032248869","0.3710970806819","0.55092393495587","1","0"
+"96.26","5","0.42806677272391","0.58535764957417","0.46287786539353","0.59719126204136","1","0"
+"96.29","5","0.42806677272391","0.55897059188255","0.46287786539353","0.57080420434974","1","0"
+"96.29","5","0.42806677272391","0.53909032248869","0.46287786539353","0.55092393495587","1","0"
+"NER post-processed","18","0.25841290426626","0.51921005309482","0.3964188033786","0.53104366556201","1","0"
+"96.33","5","0.42621069890269","0.51919821948236","0.4647372062707","0.53103183194954","1","0"
+"EE base","7","0.25841290426626","0.49282418320683","0.31129898736048","0.50465779567402","1","0"
+"EE similarity","13","0.25841290426626","0.46643712551521","0.34616028833684","0.4782707379824","1","0"
+"EE trigger span","15","0.25841290426626","0.44655685612135","0.36344868195593","0.45839046858853","1","0"
+"EE entity span","14","0.25841290426626","0.42667658672748","0.3580429209308","0.43851019919467","1","0"
+"EE strict relation","18","0.25841290426626","0.40679631733362","0.37335645448498","0.41862992980081","1","0"
+"92.23","5","0.42806677272391","0.49282418320683","0.46287786539353","0.50465779567402","1","0"
+"92.27","5","0.42806677272391","0.46643712551521","0.46287786539353","0.4782707379824","1","0"
+"92.56","5","0.42806677272391","0.44655685612135","0.46287786539353","0.45839046858853","1","0"
+"92.27","5","0.42806677272391","0.42667658672748","0.46287786539353","0.43851019919467","1","0"
+"92.4","5","0.42806677272391","0.40679631733362","0.46287786539353","0.41862992980081","1","0"
+"EE post-processed","17","0.25841290426626","0.38691604793975","0.38336464362749","0.39874966040694","1","0"
+"92.82","5","0.42621069890269","0.38690421432729","0.4647372062707","0.39873782679447","1","0"
+"94.24","5","0.51250204207796","0.38690421432729","0.55102854944597","0.39873782679447","1","0"
+"97.55","5","0.51435811589918","0.58535764957417","0.5491692085688","0.59719126204136","1","0"
+"97.59","5","0.51250176388768","0.55895875827008","0.55102827125569","0.57079237073727","1","0"
+"97.55","5","0.51435811589918","0.53909032248869","0.5491692085688","0.55092393495587","1","0"
+"97.59","5","0.51250204207796","0.51919821948236","0.55102854944597","0.53103183194954","1","0"
+"94.03","5","0.51435811589918","0.49282418320683","0.5491692085688","0.50465779567402","1","0"
+"94.07","5","0.51435811589918","0.46643712551521","0.5491692085688","0.4782707379824","1","0"
+"94.03","5","0.51435811589918","0.44655685612135","0.5491692085688","0.45839046858853","1","0"
+"94.03","5","0.51435811589918","0.42667658672748","0.5491692085688","0.43851019919467","1","0"
+"94.19","5","0.51435811589918","0.40679631733362","0.5491692085688","0.41862992980081","1","0"
+"96.73","5","0.60064945907445","0.58535764957417","0.63546055174407","0.59719126204136","1","0"
+"96.73","5","0.60065079055766","0.55897059188255","0.63546188322728","0.57080420434974","1","0"
+"96.8","5","0.59879282887266","0.53907848887622","0.63731933624067","0.55091210134341","1","0"
+"96.8","5","0.59879338525323","0.51919821948236","0.63731989262124","0.53103183194954","1","0"
+"91.99","5","0.60064945907445","0.49282418320683","0.63546055174407","0.50465779567402","1","0"
+"91.99","5","0.60064945907445","0.46643712551521","0.63546055174407","0.4782707379824","1","0"
+"92.15","5","0.59879282887266","0.44654502250888","0.63731933624067","0.45837863497607","1","0"
+"92.01","5","0.60064945907445","0.42667658672748","0.63546055174407","0.43851019919467","1","0"
+"91.98","5","0.60064945907445","0.40679631733362","0.63546055174407","0.41862992980081","1","0"
+"92.15","5","0.59879338525323","0.38690421432729","0.63731989262124","0.39873782679447","1","0"
+"97.93","5","0.68508557375066","0.58534581596171","0.72361208111867","0.59717942842889","1","0"
+"97.93","5","0.68508557375066","0.55895875827008","0.72361208111867","0.57079237073727","1","0"
+"97.93","5","0.68508417204792","0.53907848887622","0.72361067941593","0.55091210134341","1","0"
+"97.93","5","0.68508472842849","0.51919821948236","0.7236112357965","0.53103183194954","1","0"
+"93.63","5","0.68508557375066","0.49281234959437","0.72361208111867","0.50464596206155","1","0"
+"93.63","5","0.68508557375066","0.46642529190274","0.72361208111867","0.47825890436993","1","0"
+"93.63","5","0.68508417204792","0.44654502250888","0.72361067941593","0.45837863497607","1","0"
+"93.63","5","0.68508557375066","0.42666475311501","0.72361208111867","0.4384983655822","1","0"
+"93.61","5","0.68694080224971","0.40679631733362","0.72175189491933","0.41862992980081","1","0"
+"93.61","5","0.68694185554264","0.38691604793975","0.72175294821226","0.39874966040694","1","0"
+"pre-processing methods that generates the input data to train the model. A single snippet txt file
+of ChEMU 2022 data consists of multiple lines. We apply pre-processing methods mentioned in
+section 3.2 and 3.3 with two different ways. The first is to pre-process the data line by line and
+the second is to pre-process the entire snippet. If the input is generated only on each line, the
+model cannot predict the result by referencing the context information given in the other lines.
+Furthermore, for task 1b, the first deals with relations that occur on a single line, while the
+second also includes relations that occur in multiple lines. Therefore, the second outperforms
+the first.","686","0.14999932804279","0.23111095273729","0.85281468138645","0.35672605684828","8","1"
+"Table 9 shows the ablation over three post-processing methods: (1) similarity: to correct
+the entity misclassification of STARTING_MATERIAL as REAGENT_CATALYST, (2) trigger &","174","0.14999932804279","0.19892384990913","0.85000860101197","0.22797526992838","2","1"
+"entity span: to correct mispredicted trigger word or entity spans. (3) strict relation: to correct
+the relation misclassification of WORKUP as REACTION_STEP in some cases. In the NER model,
+the similarity method improves public exact and relaxed f1 by +0.03 and +0.04, respectively.
+The entity span method improves public exact f1 by +0.03. As a result, the score after applying
+all post-processing methods shows +0.07 and +0.04 improvement in public exact and relaxed f1,
+respectively. In EE model public score, the most effective method is trigger span method which
+improves public exact f1 by +0.33. Following method is strict relation, improves public exact f1
+by +0.17 and relaxed f1 by +0.16. This rule drops the private score a bit, but it is still effective in
+the public score. Similarity improves public exact f1 by +0.04 and relaxed f1 by +0.04 and entity
+span method improves public exact f1 by +0.04. Finally all of post-processing methods applied
+EE model shows +0.59, +0.21 in public exact, relaxed f1 score higher than EE base model.","1049","0.14945000302381","0.72604497024552","0.85282402770816","0.89994072859875","11","1"
+"5. Conclusion","13","0.14999932804279","0.6812833541199","0.30414344808123","0.69832382258965","1","0"
+"In this paper, we present the domain-specific language model and context-aware NER and
+RE models for ChEMU 2022. For the best performing domain-specific language model, We
+post-train Bio-linkBert with various corpora. Based on this language model, we present the
+NER model using the sequence tagging method and the RE model using the PURE approach.
+Pre-processing methods where the input contains multiple lines of sentences help the model
+to be context-aware, which ultimately improves performance. Finally, we train the ensemble
+model and apply some rules as post-processing.","577","0.14999932804279","0.55984629820998","0.85282648340837","0.66936666310326","7","1"
+"We achieve state-of-the-art performance on ChEMU 2022 tasks 1a and 1b and analyze con-
+tributions to performance. However, there is still room for improvement. First, because our
+language model has a maximum sequence length of only 512 tokens, the model can not predict
+entities and relations referencing the entire snippet. Second, some chemical entities consist of
+too many tokens, which can degrade the performance of the model. These will be our future
+works to develop improved language models.","499","0.14932233115395","0.46328380192187","0.8531045609141","0.55671061540106","6","1"
+"References","10","0.14999932804279","0.41852218579624","0.27023463368253","0.435562654266","1","0"
+"[1] E. F. Tjong Kim Sang, F. De Meulder,","40","0.15852142535563","0.39364762617444","0.48456144886742","0.4066054947796","1","0"
+"Introduction to the CoNLL-2003 shared task:
+Language-independent named entity recognition, in: Proceedings of the Seventh Con-
+ference on Natural Language Learning at HLT-NAACL 2003, 2003, pp. 142–147. URL:
+https://aclanthology.org/W03-0419.","241","0.18925506823725","0.34536578412857","0.85310560638763","0.4066054947796","4","0"
+"[2] D. Zelenko, C. Aone, A. Richardella, Kernel methods for relation extraction,","80","0.15852142535563","0.32927223271449","0.7818492496993","0.34223010131965","1","0"
+"in: Pro-
+ceedings of the 2002 Conference on Empirical Methods in Natural Language Process-
+ing (EMNLP 2002), Association for Computational Linguistics, 2002, pp. 71–78. URL:
+https://aclanthology.org/W02-1010. doi:10.3115/1118693.1118703.","237","0.18925506823725","0.27842406680208","0.85310560638763","0.34223010131965","4","0"
+"[3] Y. Luan, L. He, M. Ostendorf, H. Hajishirzi, Multi-task identification of entities, rela-
+in: Proceedings
+tions, and coreference for scientific knowledge graph construction,
+of the 2018 Conference on Empirical Methods in Natural Language Processing, Asso-
+ciation for Computational Linguistics, Brussels, Belgium, 2018, pp. 3219–3232. URL:
+https://aclanthology.org/D18-1360. doi:10.18653/v1/D18-1360.","404","0.15852142535563","0.19795512192804","0.85310560638763","0.2778547078597","6","0"
+"[4] J. Devlin, M.-W. Chang, K. Lee, K. Toutanova, BERT: Pre-training of deep bidirectional
+transformers for language understanding,
+in: Proceedings of the 2019 Conference of
+the North American Chapter of the Association for Computational Linguistics: Human
+Language Technologies, Volume 1 (Long and Short Papers), Association for Computational
+Linguistics, Minneapolis, Minnesota, 2019, pp. 4171–4186. URL: https://aclanthology.org/
+N19-1423. doi:10.18653/v1/N19-1423.","468","0.15852142535563","0.80394759125301","0.85119169961564","0.89994072859875","7","0"
+"[5] J. Lee, W. Yoon, S. Kim, D. Kim, S. Kim, C. H. So, J. Kang, BioBERT: a pre-trained biomedical
+language representation model for biomedical text mining, Bioinformatics (2019). URL:
+https://doi.org/10.1093/bioinformatics/btz682. doi:10.1093/bioinformatics/btz682.
+[6] Y. Gu, R. Tinn, H. Cheng, M. Lucas, N. Usuyama, X. Liu, T. Naumann, J. Gao, H. Poon,
+Domain-specific language model pretraining for biomedical natural language processing,
+2020. arXiv:arXiv:2007.15779.","471","0.15852142535563","0.7073850949649","0.852747636367","0.80337823231063","6","0"
+"[7] M. Yasunaga, J. Leskovec, P. Liang, Linkbert: Pretraining language models with document","91","0.15852142535563","0.69385786741736","0.84999773450685","0.70681573602252","1","0"
+"links, in: Association for Computational Linguistics (ACL), 2022.","65","0.18925506823725","0.67776312819965","0.67234994372358","0.69072099680481","1","0"
+"[8] Y. Gu, R. Tinn, H. Cheng, M. Lucas, N. Usuyama, X. Liu, T. Naumann, J. Gao, H. Poon,
+Domain-specific language model pretraining for biomedical natural language processing,
+ACM Transactions on Computing for Healthcare 3 (2022) 1–23. URL: https://doi.org/10.
+1145%2F3458754. doi:10.1145/3458754.","297","0.15852142535563","0.61082259867679","0.85281904747714","0.67462744539073","4","0"
+"[9] J. He, D. Q. Nguyen, S. A. Akhondi, C. Druckenbrodt, C. Thorne, R. Hoessel, Z. Afzal, Z. Zhai,
+B. Fang, H. Yoshikawa, A. Albahem, L. Cavedon, T. Cohn, T. Baldwin, K. Verspoor, Chemu
+2020: Natural language processing methods are effective for information extraction from
+chemical patents, Frontiers in Research Metrics and Analytics 6 (2021). URL: https://www.
+frontiersin.org/article/10.3389/frma.2021.654438. doi:10.3389/frma.2021.654438.
+[10] Z. Zhong, D. Chen, A frustratingly easy approach for entity and relation extraction, in:","537","0.14999932804279","0.51682523845158","0.85282026868377","0.61025205193077","6","0"
+"North American Association for Computational Linguistics (NAACL), 2021.","71","0.18925506823725","0.5007316870375","0.75388285601973","0.51368955564266","1","0"
+"[11] J. Wang, Y. Ren, Z. Zhang, Y. Zhang, Melaxtech: A report for CLEF 2020 - chemu task of
+chemical reaction extraction from patent, in: L. Cappellato, C. Eickhoff, N. Ferro, A. Névéol
+(Eds.), Working Notes of CLEF 2020 - Conference and Labs of the Evaluation Forum,
+Thessaloniki, Greece, September 22-25, 2020, volume 2696 of CEUR Workshop Proceedings,
+CEUR-WS.org, 2020. URL: http://ceur-ws.org/Vol-2696/paper_238.pdf.","421","0.14999932804279","0.42026274216347","0.85201587495212","0.49759600422858","5","0"
+"[12] D. Ye, Y. Lin, P. Li, M. Sun, Packed levitated marker for entity and relation extraction, in:
+Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics
+(Volume 1: Long Papers), Association for Computational Linguistics, Dublin, Ireland, 2022,
+pp. 4904–4917. URL: https://aclanthology.org/2022.acl-long.337. doi:10.18653/v1/2022.
+acl-long.337.","377","0.14999932804279","0.33722747342289","0.85697905509377","0.41712705935455","5","0"
+"[13] Y. Liu, M. Ott, N. Goyal, J. Du, M. Joshi, D. Chen, O. Levy, M. Lewis, L. Zettlemoyer,
+V. Stoyanov, Roberta: A robustly optimized bert pretraining approach, arXiv preprint
+arXiv:1907.11692 (2019).","201","0.14999932804279","0.29151314304719","0.8520214330697","0.33665811448051","3","0"
+"[14] I. Yamada, A. Asai, H. Shindo, H. Takeda, Y. Matsumoto, LUKE: Deep contextualized
+entity representations with entity-aware self-attention,
+in: Proceedings of the 2020
+Conference on Empirical Methods in Natural Language Processing (EMNLP), Association
+for Computational Linguistics, 2020. URL: https://aclanthology.org/2020.emnlp-main.523.
+doi:10.18653/v1/2020.emnlp-main.523.","380","0.14999932804279","0.20847787430662","0.85281795959252","0.28837627243464","6","0"
+"[15] Z. Yuan, Y. Liu, C. Tan, S. Huang, F. Huang, Improving biomedical pretrained language","90","0.14999932804279","0.19495064675908","0.85000262758116","0.20790851536424","1","0"
+"models with knowledge, in: Proceedings of the 20th Workshop on Biomedical Language
+Processing, Association for Computational Linguistics, Online, 2021, pp. 180–190. URL:
+https://aclanthology.org/2021.bionlp-1.20. doi:10.18653/v1/2021.bionlp-1.20.","246","0.18925506823725","0.85222943329889","0.852170974217","0.89994072859875","3","0"
+"[16] S. T.Y.S.S, P. Chakraborty, S. Dutta, D. K. Sanyal, P. P. Das,","67","0.14999932804279","0.83870101794771","0.64900063296689","0.85165888655288","1","0"
+"Joint entity and relation
+extraction from scientific documents: Role of linguistic information and entity types, in:
+EEKE@JCDL, 2021.","133","0.18925506823725","0.80651391511955","0.85216520148889","0.85165888655288","3","0"
+"[17] H.-C. Shin, Y. Zhang, E. Bakhturina, R. Puri, M. Patwary, M. Shoeybi, R. Mani, Biomegatron:
+Larger biomedical domain language model, 2020. URL: https://arxiv.org/abs/2010.06060.
+doi:10.48550/ARXIV.2010.06060.","213","0.14999932804279","0.75566574920714","0.85282968830996","0.80337823231063","3","0"
+"[18] T. He, J. Liu, K. Cho, M. Ott, B. Liu, J. Glass, F. Peng, Analyzing the forgetting problem in","98","0.14999932804279","0.7421385216596","0.84999177851753","0.75509639026476","1","0"
+"pretrain-finetuning of open-domain dialogue response models, in: EACL, 2021.","76","0.18925506823725","0.72604497024552","0.77988762170825","0.73900283885068","1","0"
+"[19] S. Kim, P. A. Thiessen, E. E. Bolton, J. Chen, G. Fu, A. Gindulyte, L. Han, J. He, S. He, B. A.
+Shoemaker, et al., Pubchem substance and compound databases, Nucleic acids research 44
+(2016) D1202–D1213.","207","0.14999932804279","0.67776312819965","0.85282946839651","0.7229092874366","3","0"
+"[20] T. Tanimoto, Ibm internal report, 17th november, IBM Company: Armonk, NY, USA","82","0.14999932804279","0.66166957678557","0.85063817745718","0.67462744539073","1","0"
+"(1957).","7","0.18870406332525","0.64557602537149","0.23774476310149","0.65853389397665","1","0"
+"[21] A. Tversky, Features of similarity., Psychological review 84 (1977) 327.","77","0.14999932804279","0.62948247395741","0.71565337860085","0.64244034256257","1","0"
+"Table 10
+Ablation over NER approaches and classification layers in ChEMU 2020","77","0.14948024109825","0.86772945586716","0.64103630013641","0.89375142714606","2","0"
+"Approach","8","0.25458946774269","0.83733474872014","0.32121589078008","0.84916836118733","1","0"
+"PLM","3","0.45319679308422","0.83733474872014","0.48599955348443","0.84916836118733","1","0"
+"Exact F1","8","0.64108581565526","0.84443425103042","0.69902620162748","0.85626786349761","1","0"
+"Entity","6","0.59470060946519","0.83023405860623","0.63692579542935","0.84206767107342","1","0"
+"Trigger word","12","0.65700911812336","0.83023405860623","0.7454092101815","0.84206767107342","1","0"
+"Span-based
+Sequence tagging (CRF)
+Sequence tagging (Dense)","58","0.25458946774269","0.78112669303591","0.43311347039021","0.8213618781551","3","0"
+"PumbedBert base
+PumbedBert base
+PumbedBert base","47","0.45319679308422","0.78112669303591","0.57461721487176","0.8213618781551","3","0"
+"86.9
+96
+95.9","12","0.60989691840424","0.78112669303591","0.63692572352993","0.8213618781551","3","0"
+"96.6
+96
+96.5","12","0.71548659781345","0.78111485942344","0.74541089847399","0.8213618781551","3","0"
+"A. Appendix","11","0.14999932804279","0.73567882146124","0.29146680531384","0.75271928993099","1","0"
+"A.1. Additional Ablation Studies for the NER Model","50","0.14999932804279","0.70699322714369","0.62286432511978","0.7211936571286","1","0"
+"Table 9 shows the ablation studies over the NER approach and classification layer in ChEMU
+2020. As mentioned in section 3, sequence tagging approach outperforms span-based approach.
+However, the performance difference between the dense layer and CRF layer is not significant.","276","0.14945000302381","0.65371129244913","0.85282003261378","0.69885626388245","3","1"
+"A.2. Post-processing to correct the entity misclassification of","63","0.14999932804279","0.61574021309197","0.7045638285434","0.62994064307689","1","0"
+"STARTING_MATERIAL as REAGENT_CATALYST","37","0.19432330549191","0.5991727280286","0.63521543888885","0.61337315801352","1","0"
+"As we mentioned in 3.5, we measure the similarity between STARTING_MATERIAL or
+REAGENT_CATALYST and REACTION_PRODUCT in the snippet and then correct the entity
+type if it appears to be misclassified. We use Pubchem[19] Python package pubchempy13 to
+parse chemical entity from text, and then the similarity is measured using Python package
+RDKit14 with Tanimoto coefficient[20] and Tversky index[21].","399","0.14935928880049","0.51370250270225","0.85047865074352","0.59103576476737","5","1"
+"13https://github.com/mcs07/PubChemPy
+14The RDKit: Open-Source Cheminformatics Software, version 2022.03.2. http://www.rdkit.org","127","0.17281227531431","0.19497915404625","0.75366384131059","0.21962085308057","2","0"
